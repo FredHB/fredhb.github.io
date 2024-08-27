@@ -194,27 +194,23 @@ print(dog2.get_human_years())  # Output: 21
 
 
 **Key Concepts:**
-
+           
 1. **Class Definition:**
-   - A class is defined using the `class` keyword followed by the class name and a colon.
-   - By convention, class names are written in CamelCase (e.g., `Dog`).
-
+    - A class is defined using the `class` keyword followed by the class name and a colon.
+    - By convention, class names are written in CamelCase (e.g., `Dog`).
 2. **Attributes:**
-   - **Class Attributes:** These are shared across all instances of the class. In the example, `species` is a class attribute.
-   - **Instance Attributes:** These are specific to each instance of the class. They are defined inside the `__init__` method (constructor). In the example, `name` and `age` are instance attributes.
-
+    - **Class Attributes:** These are shared across all instances of the class. In the example, `species` is a class attribute.
+    - **Instance Attributes:** These are specific to each instance of the class. They are defined inside the `__init__` method (constructor). In the example, `name` and `age` are instance attributes.
 3. **Methods:**
-   - Methods are functions defined within a class that operate on instances of the class.
-   - **Instance Methods:** These take `self` as the first parameter, which refers to the instance calling the method. For example, `bark` and `get_human_years` are instance methods in the `Dog` class.
-   - The `__init__` method is a special method called automatically when a new instance of the class is created. It is used to initialize the instance's attributes.
-
+    - Methods are functions defined within a class that operate on instances of the class.
+    - **Instance Methods:** These take `self` as the first parameter, which refers to the instance calling the method. For example, `bark` and `get_human_years` are instance methods in the `Dog` class.
+    - The `__init__` method is a special method called automatically when a new instance of the class is created. It is used to initialize the instance's attributes.
 4. **Creating Objects:**
-   - Objects (instances) are created by calling the class as if it were a function, passing any arguments required by the `__init__` method.
-   - For example, `dog1 = Dog("Buddy", 5)` creates an instance of the `Dog` class with `name` as `"Buddy"` and `age` as `5`.
-
+    - Objects (instances) are created by calling the class as if it were a function, passing any arguments required by the `__init__` method.
+    - For example, `dog1 = Dog("Buddy", 5)` creates an instance of the `Dog` class with `name` as `"Buddy"` and `age` as `5`.
 5. **Accessing Attributes and Methods:**
-   - Instance attributes and methods are accessed using dot notation (e.g., `dog1.name`, `dog1.bark()`).
-   - Class attributes can be accessed directly via the class name or through any instance (e.g., `Dog.species` or `dog1.species`).
+    - Instance attributes and methods are accessed using dot notation (e.g., `dog1.name`, `dog1.bark()`).
+    - Class attributes can be accessed directly via the class name or through any instance (e.g., `Dog.species` or `dog1.species`).
 
 
 After we got the basic stuff out of the way, let's write a class for $ARMA(p, q)$ processes. We call the class `arma` and have the following desiderata:
@@ -429,12 +425,12 @@ M
 
 ### Advantages of the Rouwenhorst Method:
 
-- **Flexibility:** The Rouwenhorst method is particularly useful for approximating AR(1) processes with high persistence (i.e., when $ \rho $ is close to 1) because it can accommodate the high persistence and the correct distribution properties of the AR(1) process.
-- **Accuracy:** It provides a good approximation with relatively few states (even with a small $ n $), making it computationally efficient.
+- **Flexibility:** The Rouwenhorst method is particularly useful for approximating AR(1) processes with high persistence (i.e., when $\rho$ is close to 1) because it can accommodate the high persistence and the correct distribution properties of the AR(1) process.
+- **Accuracy:** It provides a good approximation with relatively few states (even with a small $n$), making it computationally efficient.
 
 ---
 
-For an arbitrary Markov process mapping to income states and corresponding income levels $ y $, consider the simplest case:
+For an arbitrary Markov process mapping to income states and corresponding income levels $y$, consider the simplest case:
 
 $$
 \begin{align*}
@@ -445,15 +441,15 @@ $$
 
 - Note that $\mathrm{Var}(\log y_t)$ is the long-run variance as well as the cross sectional variance, which is typically directly estimated. So is $\rho$, and we infer $\alpha$.  
 
-- Our goal is to approximate this continuous AR(1) process with $ n $ discrete states using the **Rouwenhorst Method**. This method helps us construct a Markov transition matrix $\Pi$ that closely matches the properties of the AR(1) process.
+- Our goal is to approximate this continuous AR(1) process with $n$ discrete states using the **Rouwenhorst Method**. This method helps us construct a Markov transition matrix $\Pi$ that closely matches the properties of the AR(1) process.
 
-- To approximate the AR(1) process, we represent it with $ n $ discrete states. Each state is a sum $ e_t \in \{0,1,..., n-1\} $ of $ n-1 $ underlying hidden binary state variables. Each binary state has a probability $ p $ of staying at its current value and a probability $ 1-p $ of switching to a different value.
+- To approximate the AR(1) process, we represent it with $n$ discrete states. Each state is a sum $e_t \in \{0,1,..., n-1\}$ of $n-1$ underlying hidden binary state variables. Each binary state has a probability $p$ of staying at its current value and a probability $1-p$ of switching to a different value.
 
-- The parameter $ p $ is set to match the persistence of the AR(1) process, where $ p = \frac{1+\rho}{2} $. The standard deviation of the underlying state $ e_t $ is given by $ \frac{\sqrt{n-1}}{2} $. To match the cross-sectional standard deviation of log income, we scale (the grid of) $ e_t $ by $ \frac{\alpha}{\sqrt{1 - \rho^2}} \frac{2}{\sqrt{n-1}} = \sigma_y \frac{2}{\sqrt{n-1}}  $.
+- The parameter $p$ is set to match the persistence of the AR(1) process, where $p = \frac{1+\rho}{2}$. The standard deviation of the underlying state $ e_t $ is given by $\frac{\sqrt{n-1}}{2}$. To match the cross-sectional standard deviation of log income, we scale (the grid of) $e_t$ by $\frac{\alpha}{\sqrt{1 - \rho^2}} \frac{2}{\sqrt{n-1}} = \sigma_y \frac{2}{\sqrt{n-1}}$.
 
 - Finally, the goal is to find the discretized income process corresponding to these states.
 
-The Markov transition matrix $\Pi^n$ for the states $ e $ follows the recursion:
+The Markov transition matrix $\Pi^n$ for the states $e$ follows the recursion:
 
 $$
 \tilde{\Pi}^{n} = p \begin{bmatrix} \Pi^{n-1} & \mathbf{0} \\ \mathbf{0}' & 0 \end{bmatrix} 

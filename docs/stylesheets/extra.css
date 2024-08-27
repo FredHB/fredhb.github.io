@@ -46,7 +46,6 @@
     }
 }
 
-
 :root {
     --md-primary-fg-color:        #ffffff; /*shows in header*/
     --md-primary-fg-color--light: #dbd8d8;
@@ -61,6 +60,7 @@ details {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    text-align: justify;
 }
 details summary {
     font-weight: bold;
@@ -70,12 +70,35 @@ details[open] summary {
     color: #000000;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LINKS STYLING */
+
 /* NAVIGATION MENU LINKS */
 .md-ellipsis {
     color: #000000;
 }
 .md-nav__link:hover .md-ellipsis {
-    color: #e44949;
+    color: rgb(168, 39, 39);
     transition: 125ms;
 }
 .md-nav__link--active .md-ellipsis {
@@ -84,7 +107,17 @@ details[open] summary {
 }
 
 /* INLINE LINKS */
-.md-typeset a, .md-typeset, a:before {
+.md-typeset a, .md-typeset a:hover, a:before {
     transition: color 125ms;
-    color: #000000; /* Change this to your desired link color */
+    color: rgb(168, 39, 39); /* Change this to your desired link color */
+    text-decoration: underline;
     }
+
+.md-typeset .headerlink:focus, .md-typeset .headerlink:hover, .md-typeset :target>.headerlink {
+    color: white;
+}
+
+.md-typeset .headerlink:focus, .md-typeset :hover>.headerlink, .md-typeset :target>.headerlink {
+    opacity: 0;
+    transition: color .25s, opacity 125ms;
+}

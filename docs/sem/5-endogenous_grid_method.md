@@ -1,6 +1,6 @@
 # **Endogeneous Grid Method** 
 
-In this notebook we discuss how to solve the household problem a la Aiyagari--this is the main building block of most HANK models--with fast, optimized methods. The main reference for this notebook is Matt Rognlie's code on which you can find under https://github.com/shade-econ/nber-workshop-2023/blob/bc3bbba90ab575f09c4c8a9e77b0b2fe88812cd1/Lectures/Lecture%201%2C%20Standard%20Incomplete%20Markets%20Steady%20State.ipynb (2024).
+In this notebook we discuss how to solve the household problem a la Aiyagari--this is the main building block of most HANK models--with fast, optimized methods. The main reference for this notebook is Matt Rognlie's code on which you can find in the [shade-econ repo](https://github.com/shade-econ/nber-workshop-2023/blob/bc3bbba90ab575f09c4c8a9e77b0b2fe88812cd1/Lectures/Lecture%201%2C%20Standard%20Incomplete%20Markets%20Steady%20State.ipynb "shade econ github") (2024).
 
 ## 1. **Incomplete Markets Model**
 The standard incomplete markets model features the following timing:
