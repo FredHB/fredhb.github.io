@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact Gothic&display=swap');
+
 /* Set global text color */
 .md-main {
     color: #000000; /* Change this to your desired text color */
     font-weight: normal;  /* Adjust the font weight as needed */
-    font-family: "Futura"; 
+    font-family: "Futura", "Didact Gothic"; 
     text-align: justify;
 }
 
@@ -43,7 +45,6 @@
         display: none;   /* Hide the title in the menu/TOC on big screen */
     }
 }
-
 
 
 :root {
