@@ -77,27 +77,29 @@ details[open] summary {
 
 
 /* About pics */
-
 .imgs-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-	padding: 0.5rem 4rem 3rem 4rem;
-    grid-gap: 2.3rem;
+	padding: 0rem 1rem 1rem 1rem;
+    grid-gap: 3rem;
+    width: 80%;
+    height: 80%;
+    margin-left: 2rem;
 }
 
 .img-wrapper {
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    height: 40%;
     position: relative;
 }
 
-.img-wrapper .img {
-    width: 100%;
-    height: 100%;
+/* .img-wrapper img {
+    width: 40%;
+    height: 40%;
     overflow: hidden;
-}
+} */
 
-.img-wrapper .img img {
+.img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -106,7 +108,7 @@ details[open] summary {
     transition: .3s ease-in-out;
 }
 
-.img-wrapper:hover .img img {
+.img-wrapper:hover img {
     transform: scale(1.05);
 }
 
@@ -117,15 +119,13 @@ details[open] summary {
 .review-text-part p {
 	text-align: justify;
 	margin: 0.7rem 0rem 0.1rem 0rem;
-	font-family: 'Playfair Display', serif;
-	font-size: 0.85rem;
-	letter-spacing: 0.06rem;
+	/* font-size: 0.85rem; */
+	/* letter-spacing: 0.06rem; */
 }
 
 .menu-title {
 	padding-top: 0.7rem;
 	font-weight: 600;
-	font-family: "Gill Sans", serif;
 	letter-spacing: 0.1rem;
 	text-align: center;
 }
