@@ -24,7 +24,7 @@
         <div class="review-text-part">
             <div class="menu-title">Igli Bajo</div>
                 <p>
-                My name is Igli Bajo. I am a PhD student in Finance at the University of Zürich and the Swiss Finance Institute.
+                My name is Igli. I am a PhD student in Finance at the University of Zürich and the Swiss Finance Institute.
                 </p>
                 <!-- <a href="" class="read-more"><span>Personal Website</a> -->
         </div>
