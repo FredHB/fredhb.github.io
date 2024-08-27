@@ -80,5 +80,5 @@ details[open] summary {
 
 .md-typeset a, .md-typeset, a:before {
     transition: color 125ms;
-    color: "#000000"; /* Change this to your desired link color */
+    color: #000000; /* Change this to your desired link color */
     }
