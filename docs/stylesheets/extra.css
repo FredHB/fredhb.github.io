@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
 /* Set global text color */
 .md-main {
     color: #000000; /* Change this to your desired text color */
     font-weight: normal;  /* Adjust the font weight as needed */
-    font-family: "Futura", "Didact Gothic"; 
+    font-family: "Futura", "Overpass"; 
     text-align: justify;
 }
 
@@ -17,25 +17,30 @@
 .md-header {
     box-shadow: none; /* Remove the shadow */
     border-bottom: 4px solid #000000; /* Add a simple bottom border line */
-    padding: 10px;
+    padding: 12px;
 }
 
 .md-header__title {
     font-size: 1.2rem;  /* Adjust the font size as needed */
-    line-height: 1.2rem;  /* Adjust the line height as needed */
+    line-height: 1.5rem;  /* Adjust the line height as needed */
     color: #000000;
     font-family: "Arial Black"; 
     font-weight: normal;  /* Adjust the title font weight as needed */
 }
 
+.md-header__title--active .md-header__topic+.md-header__topic {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
 /* Logo and toc icon button sizes/settings */
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
-    height: 50px;  /* Adjust the height as needed */
+    height: 35px;  /* Adjust the height as needed */
     width: auto;   /* Maintain aspect ratio */
 }
 .md-header__button.md-icon svg {
-    height: 50px;  /* Adjust the height as needed */
-    width: 50px;   /* Maintain aspect ratio */
+    height: 35px;  /* Adjust the height as needed */
+    width: 35px;   /* Maintain aspect ratio */
     color: #000000;
 }
 
@@ -71,13 +76,69 @@ details[open] summary {
 }
 
 
+/* About pics */
 
+.imgs-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	padding: 0.5rem 4rem 3rem 4rem;
+    grid-gap: 2.3rem;
+}
 
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
+.img-wrapper .img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
+.img-wrapper .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
 
+.img-wrapper:hover .img img {
+    transform: scale(1.05);
+}
 
+.review-text-part {
+	text-align: end;
+}
 
+.review-text-part p {
+	text-align: justify;
+	margin: 0.7rem 0rem 0.1rem 0rem;
+	font-family: 'Playfair Display', serif;
+	font-size: 0.85rem;
+	letter-spacing: 0.06rem;
+}
+
+.menu-title {
+	padding-top: 0.7rem;
+	font-weight: 600;
+	font-family: "Gill Sans", serif;
+	letter-spacing: 0.1rem;
+	text-align: center;
+}
+
+.read-more {
+	text-decoration: none;
+	color: rgb(59, 112, 177);
+	cursor: pointer;
+}
+
+.read-more:hover {
+	text-decoration: underline;
+}
 
 
 
