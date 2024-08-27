@@ -1,4 +1,4 @@
-site_name: 'market.clearing <br> <small><i>economic research and opinion.</i></small>'
+site_name: 'market.clearing <br><small><i>economic research and opinion.</i></small>'
 
 nav:
   - About: index.md
@@ -15,6 +15,8 @@ nav:
 
 theme:
   name: "material"
+  features:
+    - navigation.top
   #favicon: "static/favicon.ico"
   #logo: "static/logo.png"  # Update the path to your logo
   # logo:
@@ -31,9 +33,6 @@ theme:
         link: "https://github.com/FredHB"
       - type: "linkedin"
         link: "https://linkedin.com/in/fbennhoff"
-
-#repo_url: https://github.com/FredHB/
-#repo_name: "FredHB"
 
 markdown_extensions:
   - pymdownx.arithmatex  # Render LaTeX math
