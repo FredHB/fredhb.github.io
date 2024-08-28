@@ -5,6 +5,7 @@ Python provides powerful tools and libraries for solving various types of equati
 ## 1. **Solving Systems of Linear Equations**
 
 A system of linear equations can be represented in matrix form as $Ax = b$, where:
+
 - $A$ is a matrix of coefficients,
 - $x$ is a vector of unknowns,
 - $b$ is a vector of constants.
@@ -218,7 +219,7 @@ newton(f, x0, maxiter=10_000)
 
 **Exercise:** Secant Method
 
-The Secant method is a derivative-free variation of Newton's method. Instead of using the exact derivative $ f'(x) $, it approximates the derivative using two recent points:
+The Secant method is a derivative-free variation of Newton's method. Instead of using the exact derivative $f'(x)$, it approximates the derivative using two recent points:
 
 $$
 x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
@@ -239,21 +240,21 @@ $$
 
 Giving us FOCs:
 $$
-\begin{equation}
+\begin{equation*}
     f_0(\omega, a_0, a_1) = 0, 
-\end{equation}
+\end{equation*}
 $$
 
 $$
-\begin{equation}
+\begin{equation*}
     f_t(a_{t-1}, a_t, a_{t+1}) \equiv \beta (1+r) ( y_{t-1} + a_{t-1}(1+r) - a_t ) - ( y_t + a_t(1+r) -a_{t+1}) = 0 ,\; \forall 1 \leq t \leq T-2 
-\end{equation}
+\end{equation*}
 $$
 
 $$
-\begin{equation}
+\begin{equation*}
     f_{T-2}(a_{T-2}, a_{T-1}, 0) =0 
-\end{equation}
+\end{equation*}
 $$
 
 to solve simultaneously by choosing $a_0, ..., a_{T-1}$. We could do this in a recursive way, but lets attack the FOCs directly.
@@ -637,3 +638,5 @@ plt.show()
 These examples should give you a good starting point for using `scipy` in various scientific and technical computing tasks.
 
 # Optimization
+
+TBD

@@ -29,8 +29,6 @@ arma_dict = {
     'sigma': 1
 }
 
-T = 1000
-
 def sim_arma(arma_dict, T):
     p = len(arma_dict['alpha'])
     q = len(arma_dict['beta'])
@@ -48,8 +46,7 @@ def sim_arma(arma_dict, T):
 
 
 ```python
-arma_ts = sim_arma(arma_dict, 10_000)
-arma_ts
+arma_ts = sim_arma(arma_dict, 250)
 
 ```
 
@@ -86,6 +83,12 @@ def plot_time_series(time_series, arma_dict, xlabel='Time', ylabel='Value'):
 plot_time_series(arma_ts, arma_dict)
 ```
 
+
+    
+![png](3-application_stoch_proc_files/3-application_stoch_proc_7_0.png)
+    
+
+
 Recall now that a given $ARMA(p,q)$ is stationary if and only if all roots of the characteristic polynomial on the AR-part, 
 $$ 1 - L^1 \alpha_1 - ... - L^q \alpha_q $$
 are outside the (complex) unit circle. We write a function to check this. To do so, we use `roots(p)`, which return the roots of a polynomial with coefficients given in `p`.
@@ -116,6 +119,23 @@ Let's try it!
 ```python
 is_stable(arma_dict['alpha'])
 ```
+
+    The lag polynomial to check is:
+    1 - 0.2*L^0 - 0.4*L^1 - 0.1*L^2
+    The roots are:
+     -2.60+1.23j
+     -2.60-1.23j
+     1.21+0.00j
+    
+    The process is stable.
+
+
+
+
+
+    True
+
+
 
 ### A Taster of OOP
 
@@ -156,30 +176,34 @@ print(dog2.get_human_years())  # Output: 21
 
 ```
 
+    Buddy
+    Buddy says woof!
+    21
+
+
 
 **Key Concepts:**
 
 1. **Class Definition:**
-   - A class is defined using the `class` keyword followed by the class name and a colon.
-   - By convention, class names are written in CamelCase (e.g., `Dog`).
+    - A class is defined using the `class` keyword followed by the class name and a colon.
+    - By convention, class names are written in CamelCase (e.g., `Dog`).
 
 2. **Attributes:**
-   - **Class Attributes:** These are shared across all instances of the class. In the example, `species` is a class attribute.
-   - **Instance Attributes:** These are specific to each instance of the class. They are defined inside the `__init__` method (constructor). In the example, `name` and `age` are instance attributes.
+    - **Class Attributes:** These are shared across all instances of the class. In the example, `species` is a class attribute.
+    - **Instance Attributes:** These are specific to each instance of the class. They are defined inside the `__init__` method (constructor). In the example, `name` and `age` are instance attributes.
 
 3. **Methods:**
-   - Methods are functions defined within a class that operate on instances of the class.
-   - **Instance Methods:** These take `self` as the first parameter, which refers to the instance calling the method. For example, `bark` and `get_human_years` are instance methods in the `Dog` class.
-   - The `__init__` method is a special method called automatically when a new instance of the class is created. It is used to initialize the instance's attributes.
+    - Methods are functions defined within a class that operate on instances of the class.
+    - **Instance Methods:** These take `self` as the first parameter, which refers to the instance calling the method. For example, `bark` and `get_human_years` are instance methods in the `Dog` class.
+    - The `__init__` method is a special method called automatically when a new instance of the class is created. It is used to initialize the instance's attributes.
 
 4. **Creating Objects:**
-   - Objects (instances) are created by calling the class as if it were a function, passing any arguments required by the `__init__` method.
-   - For example, `dog1 = Dog("Buddy", 5)` creates an instance of the `Dog` class with `name` as `"Buddy"` and `age` as `5`.
+    - Objects (instances) are created by calling the class as if it were a function, passing any arguments required by the `__init__` method.
+    - For example, `dog1 = Dog("Buddy", 5)` creates an instance of the `Dog` class with `name` as `"Buddy"` and `age` as `5`.
 
 5. **Accessing Attributes and Methods:**
-   - Instance attributes and methods are accessed using dot notation (e.g., `dog1.name`, `dog1.bark()`).
-   - Class attributes can be accessed directly via the class name or through any instance (e.g., `Dog.species` or `dog1.species`).
-
+    - Instance attributes and methods are accessed using dot notation (e.g., `dog1.name`, `dog1.bark()`).
+    - Class attributes can be accessed directly via the class name or through any instance (e.g., `Dog.species` or `dog1.species`).
 
 After we got the basic stuff out of the way, let's write a class for $ARMA(p, q)$ processes. We call the class `arma` and have the following desiderata:
 
@@ -274,6 +298,43 @@ myarma.is_stable()
 
 ```
 
+
+    
+![png](3-application_stoch_proc_files/3-application_stoch_proc_17_0.png)
+    
+
+
+    [0.3 0.3]
+    ----------------------------------------------------------------------
+    The lag polynomial to check is:
+    1 - 0.3*L^1 - 0.3*L^2
+    
+    The roots are:
+     -2.39
+     1.39
+    
+    The process is stable.
+    ----------------------------------------------------------------------
+    [3 1]
+    ----------------------------------------------------------------------
+    The lag polynomial to check is:
+    1 - 3*L^1 - 1*L^2
+    
+    The roots are:
+     -3.30
+     0.30
+    
+    The process is unstable.
+    ----------------------------------------------------------------------
+
+
+
+
+
+    False
+
+
+
 ## Markov Processes
 
 ### Introduction to Discrete Markov Processes
@@ -287,22 +348,22 @@ A **Discrete Markov Process** (or **Markov Chain**) is a mathematical model desc
 - **Time Parameter**: Discrete, often represented as $t = 0, 1, 2, \ldots$.
 
 - **Transition Probability**:
-  - Denoted as $P_{ij}$, it represents the probability of transitioning from state $i$ to state $j$ in one time step.
-  - Mathematically: $P_{ij} = P(X_{t+1} = j \mid X_t = i)$, where $X_t$ is the state at time $t$.
-  - Collect these in a matrix, $\Pi$
-  - The sum of probabilities in each row equals 1: $\sum_{j} P_{ij} = 1$ for all $i$.
+    - Denoted as $P_{ij}$, it represents the probability of transitioning from state $i$ to state $j$ in one time step.
+    - Mathematically: $P_{ij} = P(X_{t+1} = j \mid X_t = i)$, where $X_t$ is the state at time $t$.
+    - Collect these in a matrix, $\Pi$
+    - The sum of probabilities in each row equals 1: $\sum_{j} P_{ij} = 1$ for all $i$.
 
 - **Initial Distribution ($\pi^{(0)}$)**:
-  - A probability distribution over the state space at time $t = 0$.
+    - A probability distribution over the state space at time $t = 0$.
 
 - **n-Step Transition Probability**:
-  - The probability of transitioning from state $i$ to state $j$ in $n$ steps, denoted as $P_{ij}^{(n)}$.
-  - Calculated by raising the transition matrix to the $n^{th}$ power: $(P^{(n)})' = (P')^n$.
+    - The probability of transitioning from state $i$ to state $j$ in $n$ steps, denoted as $P_{ij}^{(n)}$.
+    - Calculated by raising the transition matrix to the $n^{th}$ power: $(P^{(n)})' = (P')^n$.
 
 - **Stationary Distribution ($\pi$)**:
-  - A probability distribution over states that remains unchanged as the process evolves.
-  - Satisfies $\pi = \pi P$.
-  - Represents the long-term behavior of the Markov process if it exists and is unique.
+    - A probability distribution over states that remains unchanged as the process evolves.
+    - Satisfies $\pi = \pi P$.
+    - Represents the long-term behavior of the Markov process if it exists and is unique.
 
 Given a distribution $\pi_t$, the next period distribution will be $\pi_{t+1} = \Pi' \pi_t$
 
@@ -322,6 +383,13 @@ pi = np.array([0.5, 0.5, 0])
 pi @ Pi
 ```
 
+
+
+
+    array([0.15, 0.45, 0.4 ])
+
+
+
 **Exercise:** Write a function that checks whether a given matrix is a Markov matrix.
 
 Then, write a function which takes a Markov transition matrix and calculates the stationary distribution. (Hint: $\Pi^N$ converges to a matrix which contains the stationary distribution(s) in its rows.) 
@@ -335,6 +403,15 @@ for i in range(50):
     M = Pi @ M
 M
 ```
+
+
+
+
+    array([[0.35042735, 0.34188034, 0.30769231],
+           [0.35042735, 0.34188034, 0.30769231],
+           [0.35042735, 0.34188034, 0.30769231]])
+
+
 
 ## Rouwenhorst Method to Approximate an AR(1) Process with a Markov Chain
 
@@ -356,15 +433,15 @@ $$
 
 - Note that $\mathrm{Var}(\log y_t)$ is the long-run variance as well as the cross sectional variance, which is typically directly estimated. So is $\rho$, and we infer $\alpha$.  
 
-- Our goal is to approximate this continuous AR(1) process with $ n $ discrete states using the **Rouwenhorst Method**. This method helps us construct a Markov transition matrix $\Pi$ that closely matches the properties of the AR(1) process.
+- Our goal is to approximate this continuous AR(1) process with $n$ discrete states using the **Rouwenhorst Method**. This method helps us construct a Markov transition matrix $\Pi$ that closely matches the properties of the AR(1) process.
 
-- To approximate the AR(1) process, we represent it with $ n $ discrete states. Each state is a sum $ e_t \in \{0,1,..., n-1\} $ of $ n-1 $ underlying hidden binary state variables. Each binary state has a probability $ p $ of staying at its current value and a probability $ 1-p $ of switching to a different value.
+- To approximate the AR(1) process, we represent it with $n$ discrete states. Each state is a sum $e_t \in \{0,1,..., n-1\}$ of $n-1$ underlying hidden binary state variables. Each binary state has a probability $p$ of staying at its current value and a probability $1-p$ of switching to a different value.
 
-- The parameter $ p $ is set to match the persistence of the AR(1) process, where $ p = \frac{1+\rho}{2} $. The standard deviation of the underlying state $ e_t $ is given by $ \frac{\sqrt{n-1}}{2} $. To match the cross-sectional standard deviation of log income, we scale (the grid of) $ e_t $ by $ \frac{\alpha}{\sqrt{1 - \rho^2}} \frac{2}{\sqrt{n-1}} = \sigma_y \frac{2}{\sqrt{n-1}}  $.
+- The parameter $p$ is set to match the persistence of the AR(1) process, where $p = \frac{1+\rho}{2}$. The standard deviation of the underlying state $e_t$ is given by $\frac{\sqrt{n-1}}{2}$. To match the cross-sectional standard deviation of log income, we scale (the grid of) $e_t$ by $\frac{\alpha}{\sqrt{1 - \rho^2}} \frac{2}{\sqrt{n-1}} = \sigma_y \frac{2}{\sqrt{n-1}}$.
 
 - Finally, the goal is to find the discretized income process corresponding to these states.
 
-The Markov transition matrix $\Pi^n$ for the states $ e $ follows the recursion:
+The Markov transition matrix $\Pi^n$ for the states $e$ follows the recursion:
 
 $$
 \tilde{\Pi}^{n} = p \begin{bmatrix} \Pi^{n-1} & \mathbf{0} \\ \mathbf{0}' & 0 \end{bmatrix} 
@@ -387,7 +464,7 @@ Let's get to it:
 
 ```python
 # sigma is the sd of the error, e_t
-@jit(nopython=T)
+@jit(nopython=True)
 def rouwenhorst(n, rho, sd_log_y):
     
     # the grid    
@@ -454,3 +531,12 @@ plt.tight_layout()
 plt.show()
 
 ```
+
+    the steady state is unique.
+
+
+
+    
+![png](3-application_stoch_proc_files/3-application_stoch_proc_26_1.png)
+    
+
