@@ -35,9 +35,15 @@
 
 /* Logo and toc icon button sizes/settings */
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
-    height: 35px;  /* Adjust the height as needed */
+    height: 50px;  /* Adjust the height as needed */
     width: auto;   /* Maintain aspect ratio */
+    margin-top: 22px;
 }
+
+.md-header__inner {
+    padding: 0rem;
+}
+
 .md-header__button.md-icon svg {
     height: 35px;  /* Adjust the height as needed */
     width: 35px;   /* Maintain aspect ratio */
@@ -55,7 +61,7 @@
     --md-primary-fg-color:        #ffffff; /*shows in header*/
     --md-primary-fg-color--light: #dbd8d8;
     --md-primary-fg-color--dark:  #62725f;
-    --md-accent-fg-color: #ff0000; /* Change this to your desired accent color */
+    --md-accent-fg-color: rgb(168, 39, 39); /* Change this to your desired accent color */
 
   }
 
