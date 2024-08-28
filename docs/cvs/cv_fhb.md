@@ -1,8 +1,6 @@
 # **Frederik H. Bennhoff**
 
 - **Email:** [frederik.bennhoff@econ.uzh.ch](mailto:frederik.bennhoff@econ.uzh.ch)  
-- **Nationality:** German Citizen  
-- **Residency:** UK Settled Status, based in Switzerland
 
 ---
 

@@ -1,9 +1,12 @@
 site_name: 'market.clearing <br><small><i>economic research and opinion.</i></small>'
 
 nav:
-  - About: index.md
-  - "CV": "cvs/cv_fhb.md"
-  - "Research": "research/index.html"
+  - About: 
+    - about/index.md
+    - "Frederik Bennhoff":
+      - "CV": "cvs/cv_fhb.md"
+      - "Research": "research/index.md"
+    - "Igli Bajo"
   - "Blog": "blog/index.md"
   - "Short Courses & Resources":
     - "Solving Economic Models": 
