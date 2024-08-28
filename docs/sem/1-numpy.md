@@ -119,6 +119,8 @@ A[A < 3.2] = 0 # replace all elements < 3.2 by 0
 print(A)
 ```
 
+Note that above we created a `np.matrix`, which is in many ways similar to a numpy array. However, it has some methods associated with it which are specific for linear algebra. Additionally, some operators are interpreted differently. The asterisk `*` defines element-wise multiplication for arrays, but always refers to matrix-multiplication for matrices. Furthermore, when making a boolean comparison where only matrices are involved, the returned object will be a _boolean matrix_ and also have matrix operations associated to it.
+
 Note that the Boolean comparison is done element-wise on the elements of the matrix (here, `A`):
 
 
@@ -170,7 +172,67 @@ $$
 
 
 ```python
-# TBD
+# a solution with a loop
+def make_shift_mat(n):
+    A = np.zeros([n,n])
+    for i in range(n-1):
+        A[i,i+1] = 1
+    return A
+
+# an alternative way with slicing
+def make_shift_mat(n):
+    A = np.zeros((n,n))
+    A[np.arange(n-1), np.arange(1,n)] = 1
+    
+    return A
+
+make_shift_mat(8)
+
+def make_nilpotent_mat(dim_list): 
+    B = np.zeros((sum(dim_list),sum(dim_list)))
+    start = 0
+    for n in dim_list:
+        end = start + n
+        B[start:end, start:end] = make_shift_mat(n)
+        start += n
+    return B
+
+
+def get_np_index(M, max_iter=10_000):
+    M_copy = M.copy()
+    counter = 0
+    while not np.all(M_copy == 0):
+        counter += 1
+        M_copy = M_copy @ M
+
+        if counter >= max_iter:
+            print("NO NILPINDEX FOUND")
+            return None      
+
+    print("NILPINDEX", counter+2)
+    return counter+2
+
+
+def get_np_index(M, max_iter=10_000):
+    M_copy = M.copy()
+    
+    for i in range(max_iter):
+        
+        M_copy = M_copy @ M
+
+        if np.all(M_copy == 0):    
+            print("NILPINDEX", i+2)
+            return i+2
+
+    print("NO NILPINDEX FOUND")
+    return None      
+
+
+M = make_nilpotent_mat([6, 2, 5])
+
+get_np_index(M)
+# check that it works
+M @ M @ M @ M @ M @ M 
 ```
 
 ### Functions to Make Arrays 
@@ -343,13 +405,11 @@ Write the function `demean` which takes two inputs, a numpy array `A` and `axis`
 
 
 ```python
-def demean(A, axis = None):
-    
-    if axis == None : 
-        return A - A.mean()
-    
-    means = A.mean(axis=axis)
-    return A - means # broadcasting rule 2 is our friend here
+def demean(A, axis=None):
+    A_mean = A.mean(axis=axis, keepdims = True)
+    return A - A_mean # broadcasting rule 2 is our friend here
+
+demean(A, axis=1) 
 ```
 
 ## 4. **Other Exercises**

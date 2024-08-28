@@ -1,6 +1,6 @@
 # **Endogeneous Grid Method** 
 
-In this notebook we discuss how to solve the household problem a la Aiyagari--this is the main building block of most HANK models--with fast, optimized methods. The main reference for this notebook is Matt Rognlie's code on which you can find in the [shade-econ repo](https://github.com/shade-econ/nber-workshop-2023/blob/bc3bbba90ab575f09c4c8a9e77b0b2fe88812cd1/Lectures/Lecture%201%2C%20Standard%20Incomplete%20Markets%20Steady%20State.ipynb "shade econ github") (2024).
+In this notebook we discuss how to solve the household problem a la Aiyagari--this is the main building block of most HANK models--with fast, optimized methods. The main reference for this notebook is Matt Rognlie's code on which you can find under https://github.com/shade-econ/nber-workshop-2023/blob/bc3bbba90ab575f09c4c8a9e77b0b2fe88812cd1/Lectures/Lecture%201%2C%20Standard%20Incomplete%20Markets%20Steady%20State.ipynb (2024).
 
 ## 1. **Incomplete Markets Model**
 The standard incomplete markets model features the following timing:
@@ -41,9 +41,6 @@ from utils_simm import Grid
 Grids = Grid(n_y = 10, rho = 0.975,  sd_log_y = 0.7, n_a = 100, min_a = 0, max_a = 10_000)
 ```
 
-    the steady state is unique.
-
-
 ## 2. **Backwards Iteration to Obtain Policy Functions**
 
 It is more efficient and accurate to use envelope condition and FOC to iterate on marginal value function $V_a$ instead of finding the value function itself. We do backwards iteration in time. Let $a_t'(y_t, a_t)$ be the policy function for next-period asset holdings. Assume that $u(c) = \frac{c^{1-\sigma}}{1-\sigma}$, where $\sigma$ is the elasiticity of intertemporal substitution (eis).
@@ -80,9 +77,6 @@ model_params = {
 
 Grids = Grid(n_y = 15, rho = model_params['rho'],  sd_log_y = model_params['sd_log_y'], n_a = 100, min_a = 0, max_a = 10_000)
 ```
-
-    the steady state is unique.
-
 
 
 ```python
@@ -149,12 +143,6 @@ for i_y in range(Grids.n_y):
 ax.set(xlabel = r'$a$', ylabel = r'$a^{\prime}$', title = 'Policy function after 1 iteration')
 plt.show()
 ```
-
-
-    
-![png](5-endogenous_grid_method_files/5-endogenous_grid_method_12_0.png)
-    
-
 
 #### **Step 3** - Obtain $V_{t, a}$
 
@@ -282,15 +270,6 @@ ss.c, ss.a_prime
 ss.plot_policy(0.2)
 ```
 
-    the steady state is unique.
-
-
-
-    
-![png](5-endogenous_grid_method_files/5-endogenous_grid_method_18_1.png)
-    
-
-
 **Exercise:** Refactor the code in order to use `@njit`.
 
 
@@ -377,15 +356,6 @@ ss.c, ss.a_prime
 ss.plot_policy(0.2)
 ```
 
-    the steady state is unique.
-
-
-
-    
-![png](5-endogenous_grid_method_files/5-endogenous_grid_method_21_1.png)
-    
-
-
 
 ```python
 %%timeit 
@@ -397,38 +367,6 @@ ss.solve_ss(model_params=ss.model_params)
 ```python
 ss.solve_ss(ss.model_params)
 ```
-
-
-
-
-    (array([[1.41722822e-01, 1.46412415e-01, 1.50292317e-01, ...,
-             1.86182818e+02, 1.94981292e+02, 2.04215800e+02],
-            [2.50991933e-01, 2.55681526e-01, 2.60415096e-01, ...,
-             1.86403939e+02, 1.95202357e+02, 2.04436700e+02],
-            [4.44508157e-01, 4.49197750e-01, 4.53931320e-01, ...,
-             1.86684758e+02, 1.95483026e+02, 2.04717044e+02],
-            ...,
-            [1.34562866e+00, 1.34617631e+00, 1.34672238e+00, ...,
-             1.87539703e+02, 1.96337168e+02, 2.05569687e+02],
-            [2.11335992e+00, 2.11362938e+00, 2.11390126e+00, ...,
-             1.88211194e+02, 1.97007799e+02, 2.06238802e+02],
-            [3.17854812e+00, 3.17874042e+00, 3.17893450e+00, ...,
-             1.89156862e+02, 1.97952041e+02, 2.07180594e+02]]),
-     array([[0.00000000e+00, 0.00000000e+00, 8.53668052e-04, ...,
-             8.93360537e+03, 9.36572181e+03, 9.82092592e+03],
-            [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
-             8.93349352e+03, 9.36561001e+03, 9.82081429e+03],
-            [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
-             8.93340622e+03, 9.36552286e+03, 9.82072746e+03],
-            ...,
-            [4.85540026e-02, 5.26959516e-02, 5.68834457e-02, ...,
-             8.93350095e+03, 9.36561839e+03, 9.82082450e+03],
-            [3.55745601e-01, 3.60165727e-01, 3.64627417e-01, ...,
-             8.93390438e+03, 9.36602268e+03, 9.82123030e+03],
-            [1.19425196e+00, 1.19874925e+00, 1.20328874e+00, ...,
-             8.93486241e+03, 9.36698214e+03, 9.82219221e+03]]))
-
-
 
 ## 3. **Forward Iteration to Obtain Distribution**
 
@@ -487,9 +425,6 @@ mu = get_mu(ss.a_prime, ss.Grids.grid_a, ss.Grids.grid_y)
 
 %timeit get_mu(ss.a_prime, ss.Grids.grid_a, ss.Grids.grid_y)
 ```
-
-    1.84 ms ± 17.5 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-
 
 Instead, consider where the mass of $D_t(y, a)$ is sent to. For $y$ fixed, $D_t(y, a) \dfrac{a'(y, a) - a'(y, a)^-}{a'(y, a)^+ - a'(y, a)^-} = D_t(y, a) q(y, a)$ is sent to $a'(y, a)^+$ and $D_t(y, a) (1-q(y, a))$ is sent to $a'(y, a)^-$. Proceeding over all $(y, a)$, we obtain $\tilde D_t(\cdot, \cdot)$, the distribution after asset choices were made and before income shocks realized.
 
@@ -588,11 +523,6 @@ print(model_params, "\n",grid_params, sep="")
 ss = SteadyStateHH(model_params, grid_params)
 ```
 
-    {'beta': 0.98, 'r': 0.0025, 'eis': 1, 'rho': 0.975, 'sd_log_y': 0.7}
-    {'n_y': 7, 'n_a': 500, 'min_a': 0, 'max_a': 10000}
-    the steady state is unique.
-
-
 
 ```python
 # solve for steady state
@@ -600,25 +530,6 @@ ss.solve_ss(ss.model_params)
 
 ss.distribution_ss()
 ```
-
-
-
-
-    array([[1.40918274e-001, 1.12836882e-004, 7.66408375e-005, ...,
-            4.63400194e-114, 6.22448773e-116, 4.23457364e-118],
-           [1.38212429e-001, 2.53033570e-004, 1.90803709e-004, ...,
-            4.61175517e-114, 6.19620063e-116, 4.21646007e-118],
-           [1.29247539e-001, 6.69139940e-004, 5.20800102e-004, ...,
-            4.61134519e-114, 6.19614397e-116, 4.21685452e-118],
-           ...,
-           [4.76938191e-003, 8.11450720e-005, 5.90862252e-005, ...,
-            4.73711752e-114, 6.35938753e-116, 4.32452420e-118],
-           [1.49636758e-004, 2.56112858e-006, 1.86456018e-006, ...,
-            4.92295035e-114, 6.59920835e-116, 4.48156752e-118],
-           [3.77194925e-006, 6.47532936e-008, 4.71375717e-008, ...,
-            5.27257915e-114, 7.04886178e-116, 4.77491899e-118]])
-
-
 
 # **The result: utils_simm.py**
 For reference, here is the code for the standard incomplete markets module which we have developed in this notebook.
