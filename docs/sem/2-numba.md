@@ -41,18 +41,11 @@ arr = np.random.random((1000, 1000))
 print(sum2d(arr))
 ```
 
-    499786.5110280343
-
-
 
 ```python
 %timeit sum2d(arr)
 %timeit sum2d_slow(arr)
 ```
-
-    962 µs ± 22.3 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-    97.2 ms ± 872 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-
 
 **Example 2:** A function to calculate the nth entry of the Fibonacci sequence $x_n = x_{n-1} + x_{n-2}$ with $x_{1}, x_2 = 1$.
 
@@ -69,9 +62,6 @@ def fibonacci(n):
 
 print(fibonacci(10))
 ```
-
-    55
-
 
 **Example 3:** A custom function to perform matrix multiplication.
 
@@ -92,13 +82,6 @@ A = np.random.random((5, 5))
 B = np.random.random((5, 5))
 print(matmul(A, B))
 ```
-
-    [[1.4514753  1.32305191 1.25235988 1.44795913 1.55660788]
-     [1.46294477 0.85973228 1.58522546 1.55403469 1.71984292]
-     [1.72648712 1.10562892 1.42989854 1.85125009 1.62913051]
-     [1.0396612  0.51215292 0.51537985 0.7726122  0.74865445]
-     [2.04539607 1.20238027 1.77141126 2.03741301 2.05260105]]
-
 
 **Exercise:** Time the functions in all examples and compare the runtime to a non-JIT'ed version.
 
@@ -132,22 +115,11 @@ B = np.random.random((5, 5))
 print(parallel_matmul(A, B))
 ```
 
-    [[1.31577986 1.49884264 1.94781013 1.45911418 0.64862766]
-     [1.50920653 1.49459458 1.9368384  1.38670584 0.55048787]
-     [1.30076171 1.45904873 1.66212383 1.49218447 0.73760154]
-     [1.83481767 1.95518141 2.24005768 2.0264003  0.88199028]
-     [1.36154679 1.27642442 1.56403358 1.25980903 0.62781672]]
-
-
 
 ```python
 %timeit matmul(A, B)
 %timeit parallel_matmul(A, B)
 ```
-
-    532 ns ± 3.06 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
-    89.2 µs ± 771 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
-
 
 **Exercise:** Parallel simulation of a brownian motion.
 The formula for a Geometric Brownian Motion (GBM) is given by:
@@ -208,12 +180,6 @@ plt.xlabel(r't')
 plt.show()
 ```
 
-
-    
-![png](2-numba_files/2-numba_17_0.png)
-    
-
-
 Let's time the function:
 
 
@@ -221,9 +187,6 @@ Let's time the function:
 %%timeit
 GBM_sim(S0 = 1, mu = 0.08, sigma = 1, deltaT = 0.001, T = 1, N = 5000)
 ```
-
-    18.7 ms ± 234 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-
 
 **Exercise:** Write a function ```call_payout(price, strike)```, which gives you the value of a call option at maturity if the price of the underlying are given in `prices` and you have the right (but not the obligation) to buy the underlying for the strike price `strike`.
 
@@ -260,9 +223,3 @@ plt.xlabel(r'Number of years, $t$')
 plt.legend()
 plt.show()
 ```
-
-
-    
-![png](2-numba_files/2-numba_24_0.png)
-    
-
