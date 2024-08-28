@@ -18,7 +18,7 @@ theme:
   features:
     - navigation.top
   #favicon: "static/favicon.ico"
-  #logo: "static/logo.png"  # Update the path to your logo
+  logo: "static/logo_bold_small.jpg"  # Update the path to your logo
   # logo:
   #   icon: "home"
   #palette:
