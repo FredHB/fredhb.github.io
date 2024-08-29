@@ -24,7 +24,7 @@ from numba import prange, jit
 ```python
 arma_dict = {
     'alpha_0': 0.,
-    'alpha': np.array([0.2, 0.4, 0.1]),
+    'alpha': np.array([0.2, 0.4, 0.1]),  
     'beta': np.array([0.1]),
     'sigma': 1
 }
@@ -32,14 +32,14 @@ arma_dict = {
 def sim_arma(arma_dict, T):
     p = len(arma_dict['alpha'])
     q = len(arma_dict['beta'])
-    alpha = arma_dict['alpha']
-    beta = arma_dict['beta']
+    alpha = np.flip(arma_dict['alpha']) # reverse the vectors to make sure a_j is multiplied to y_t-j in np.vdot 
+    beta = np.flip(arma_dict['beta'])
 
     y = np.empty(1000+T) # 1000 burn-in draws
     eps = np.random.normal(0., arma_dict['sigma'], T+1000)
     y[0:max(p,q)] = eps[0:max(p,q)]  
-    for i in np.arange(max(p,q)+1, T+1000):
-        y[i] = np.vdot(y[i-(p+1):(i-1)], alpha) + np.vdot(eps[i-(q+1):(i-1)], beta)
+    for i in np.arange(max(p,q), T+1000):
+        y[i] = np.vdot(y[i-(p):(i)], alpha) + np.vdot(eps[i-(q):(i)], beta)
     return y[-T:]
 
 ```
@@ -91,7 +91,7 @@ plot_time_series(arma_ts, arma_dict)
 
 Recall now that a given $ARMA(p,q)$ is stationary if and only if all roots of the characteristic polynomial on the AR-part, 
 $$ 1 - L^1 \alpha_1 - ... - L^q \alpha_q $$
-are outside the (complex) unit circle. We write a function to check this. To do so, we use `roots(p)`, which return the roots of a polynomial with coefficients given in `p`.
+are outside the (complex) unit circle. We write a function to check this. To do so, we use `np.roots(p)`, which return the roots of a polynomial with coefficients given in `p`.
 
 
 ```python
@@ -105,7 +105,7 @@ def is_stable(alpha):
         print(f" {root:.2f}")
 
     # Check if all roots have modulus > 1
-    are_roots_outside_unit_circle = all(np.abs(roots) > 1)
+    are_roots_outside_unit_circle = np.all(np.abs(roots) > 1)
     if are_roots_outside_unit_circle : 
         print("\nThe process is stable.")
     else :
@@ -357,12 +357,12 @@ A **Discrete Markov Process** (or **Markov Chain**) is a mathematical model desc
     - A probability distribution over the state space at time $t = 0$.
 
 - **n-Step Transition Probability**:
-    - The probability of transitioning from state $i$ to state $j$ in $n$ steps, denoted as $P_{ij}^{(n)}$.
-    - Calculated by raising the transition matrix to the $n^{th}$ power: $(P^{(n)})' = (P')^n$.
+    - The probability of transitioning from state $i$ to state $j$ in $n$ steps, denoted as $\Pi_{ij}^{(n)}$.
+    - Calculated by raising the transition matrix to the $n^{th}$ power: $(\Pi^{(n)})' = (\Pi')^n$.
 
 - **Stationary Distribution ($\pi$)**:
     - A probability distribution over states that remains unchanged as the process evolves.
-    - Satisfies $\pi = \pi P$.
+    - Satisfies $\pi = \Pi' \pi$.
     - Represents the long-term behavior of the Markov process if it exists and is unique.
 
 Given a distribution $\pi_t$, the next period distribution will be $\pi_{t+1} = \Pi' \pi_t$
@@ -378,9 +378,10 @@ Pi = np.array([
 
 # current distribution
 pi = np.array([0.5, 0.5, 0])
+pi = pi[:, np.newaxis]
 
 # next period distribution
-pi @ Pi
+Pi.transpose() @ pi
 ```
 
 
@@ -391,6 +392,10 @@ pi @ Pi
 
 
 **Exercise:** Write a function that checks whether a given matrix is a Markov matrix.
+
+  - do the columns in a given row sum to 1?  
+  - are all entries between 0 and 1?
+  - is it a square matrix?
 
 Then, write a function which takes a Markov transition matrix and calculates the stationary distribution. (Hint: $\Pi^N$ converges to a matrix which contains the stationary distribution(s) in its rows.) 
 
