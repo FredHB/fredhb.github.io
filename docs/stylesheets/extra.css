@@ -213,21 +213,13 @@ details[open] summary {
 
 /* Set global text color */
 
-.md-typeset h2 {
+.md-typeset h2, .md-typeset h1, .md-typeset h3 {
     color: black;
 } 
 
-.md-typeset h1 {
+#igli-bajo {
     display: none;
-}
- 
-#research-and-publications, #about, #frederik-h-bennhoff, #numpy-basics,
-#numba, #introduction-to-equation-solving-optimization-in-python,
-#endogeneous-grid-method, #application-stochastic-processes {
-    display: block;
-    color: black;
 } 
-
 
 /* Actual css for my webpage */
 

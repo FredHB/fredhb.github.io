@@ -1,9 +1,10 @@
 ---
-title: "Igli Bajo"
 hide:
   - navigation
   - toc
 ---
+
+# **Igli Bajo**
 
 === "Bio"
     <!-- Webpage -->
@@ -110,7 +111,6 @@ hide:
 - finisci CV
 - collega file CV
 - finisci about section with Fred
-- create 2 sample blogs
 -->
 
 <!-- Include Font Awesome for icons -->
