@@ -160,10 +160,6 @@ details[open] summary {
 
 
 
-
-
-
-
 /* LINKS STYLING */
 
 /* NAVIGATION MENU LINKS */
@@ -193,4 +189,189 @@ details[open] summary {
 .md-typeset .headerlink:focus, .md-typeset :hover>.headerlink, .md-typeset :target>.headerlink {
     opacity: 0;
     transition: color .25s, opacity 125ms;
+}
+
+
+
+
+
+
+/* Igli Personal Website */
+
+
+/* Set global margins */
+
+.md-main__inner {
+    margin-top: 0.5rem;
+}
+
+/* .md-content__inner {
+    margin-top: 0;
+    padding-top: 0;
+} */
+
+
+/* Set global text color */
+
+.md-typeset h2 {
+    color: black;
+} 
+
+.md-typeset h1 {
+    display: none;
+}
+ 
+#research-and-publications, #about, #frederik-h-bennhoff, #numpy-basics,
+#numba, #introduction-to-equation-solving-optimization-in-python,
+#endogeneous-grid-method {
+    display: block;
+    color: black;
+} 
+
+
+/* Actual css for my webpage */
+
+.headline {
+    padding: 0;
+    margin: 0;
+}
+
+.home-section {
+    padding: 30px 0;
+}
+
+#about-sec {
+    margin-bottom: 30px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-img, .work-title, .research-title {
+    text-align: center;
+}
+
+.about-img img {
+    border-radius: 20%;
+    max-width: 100%;
+    height: auto;
+}
+
+.about-img h3 {
+    margin-top: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.work-title h3, .research-title h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+
+.about-img a {
+    color: #0056b3;
+    margin: 0px 3px;
+    font-size: 1.4rem;
+}
+
+.about-img a:hover {
+    color: navy;
+}
+
+.about-img .cv-link:hover {
+    text-decoration: none;
+}
+
+.about-img .cv-link {
+    text-decoration: none;
+}
+
+.about-info, .work-info, .research-info {
+    text-align: left;
+}
+
+.about-info p {
+    margin-bottom: 1rem;
+}
+
+.work-info ul, .research-info ul {
+    margin-bottom: 0rem;
+    margin-top: 1.35rem;
+}
+
+.work-info ul, .research-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.work-info li, .research-info li {
+    margin-bottom: 10px;
+}
+
+.work-info li i, .research-info li i {
+    margin-right: 10px;
+    color: #0056b3;
+}
+
+.about-info .bio {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 990px) {
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        align-items: center;
+    }
+    
+    .work-info ul, .research-info ul {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+
+    .work-title h3, .research-title h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.tabbed-set .tabbed-alternate {
+    margin-top: 0;
+}
+
+.tabbed-labels a {
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.tabbed-labels a:hover {
+    text-decoration: none;
+}
+
+.md-typeset .tabbed-set {
+    margin-top: 0;
+}
+
+.back-button a {
+    float: right;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #0056b3 !important;
+    text-decoration: none !important;
+}
+
+.back-button a:hover {
+    color: navy !important;
 }
