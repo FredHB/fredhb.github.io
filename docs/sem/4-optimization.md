@@ -5,6 +5,7 @@ Python provides powerful tools and libraries for solving various types of equati
 ## 1. **Solving Systems of Linear Equations**
 
 A system of linear equations can be represented in matrix form as $Ax = b$, where:
+
 - $A$ is a matrix of coefficients,
 - $x$ is a vector of unknowns,
 - $b$ is a vector of constants.
@@ -32,12 +33,94 @@ print(x)
 
 **Exercises:**
 
-1. Write a function `fit` taking in a np.array `y` and a matrix `X` of conformable dimensions, such that it calculates the OLS estimator $\hat{\beta}(X)$, as well as the residual vector $\epsilon$. Do not solve the normal equations with a matrix inverse, but use `np.linalg.solve`.
-2. Write a function `robust` which estimates the sandwich estimator: 
+1. Write a function `fit` taking in a np.array `y` and a matrix `X` of conformable dimensions ($X\in \mathbb{R}^{n\times k}$), such that it calculates the OLS estimator $\hat{\beta}(X)$, as well as the residual vector $\epsilon$. Do not solve the normal equations with a matrix inverse, but use `np.linalg.solve`.
+2. Write a function `robust` which calculates the sandwich estimator: 
    
-$$\text{Var}(\hat{\beta})_{\text{robust}} = (X'X)^{-1} \left( \sum_{i=1}^n X_i' \hat{\epsilon}_i^2 X_i \right) (X'X)^{-1}$$
+$$n\text{Var}(\hat{\beta})_{\text{robust}} = (X'X)^{-1} \left( \sum_{i=1}^n X_i' \hat{\epsilon}_i^2 X_i \right) (X'X)^{-1}$$
 
 3. Write a `class` called `olsmodel` which holds `y` and `X`, and which contains methods `fit`, `robust` and `predict`
+
+**Solution**
+
+
+```python
+def sim_some_data(size, ncov):
+    X = np.random.normal(size=(size, ncov))
+    beta = np.random.randint(-5,5, size = ncov)
+    X[:, 0] = 1
+    y = X @ beta + np.random.normal(loc=0, scale=ncov, size=size) 
+    return y, X, beta 
+
+y, X, beta = sim_some_data(100_000, 100)
+
+def fit(y, X):
+    beta_hat = np.linalg.solve( X.T @ X, X.T @ y )
+    resid = y - X @ beta_hat
+    return beta_hat, resid
+
+beta_hat, resid = fit(y, X)
+
+# import matplotlib.pyplot as plt
+# plt.scatter(beta, beta_hat)
+# plt.title("Coefficient plot")
+# plt.xlabel(r"$\beta$")
+# plt.ylabel(r"$\hat \beta$")
+# plt.show()
+```
+
+
+```python
+from numba import njit
+
+@njit
+def robust(X, resid):
+    k = X.shape[1]
+    n = X.shape[0]
+    sum = np.zeros((k, k))
+    for i in range(n): # we prefer using a loop over using residuals on a diagonal matrix, so we don't have to instantiate a NxN matrix 
+        sum = sum + np.outer(X[i, :],  X[i, :]) * (resid[i]**2)
+
+    XpX_inv = np.linalg.inv(X.T @ X)
+
+    sw = (XpX_inv @ sum @ XpX_inv)
+    return sw
+
+_ = robust(X, resid)
+
+## Or an alternative version using no matrix inversion:
+@njit
+def robust_linalg(X, resid):
+    k = X.shape[1]
+    n = X.shape[0]
+    sum = np.zeros((k, k))
+    for i in range(n): # we prefer using a loop over using residuals on a diagonal matrix, so we don't have to instantiate a NxN matrix 
+        sum = sum + np.outer(X[i, :],  X[i, :]) * (resid[i]**2)
+
+    XpX = X.T @ X
+
+    # steps:
+    # XpX @ sw @ XpX = sum
+    sw_XpX = np.linalg.solve(XpX , sum)
+
+    # steps:
+    # sw @ XpX = sw_XpX
+    # XpX.T @ sw.T = sw_XpX.T
+    sw_T = np.linalg.solve(XpX.T, sw_XpX.T) # transpose of sandwich sw (but sw is diagonal)
+
+    return sw_T
+
+_ = robust_linalg(X, resid) # compile function and throw result away
+```
+
+
+```python
+%timeit robust(X, resid)
+%timeit robust_linalg(X, resid)
+```
+
+    1.19 s ± 31.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    1.32 s ± 110 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+
 
 ## 2. **Finding Roots of Polynomial Equations**
 
@@ -57,7 +140,50 @@ print(roots)
 
 
 **Exercise:** Write a function `IRR` to calculate the internal rate of return of a payment stream. The function takes as arguments a stream of future payments $x_1,...,x_n$ and an initial payment $C_0$, and finds the roots of the equation $$ C_0 = \sum_i x_i (1+r)^{-i}.$$
-It then checks which of the roots $\{r_1,...,r_n\}$ are real and $>-1$, and returns those. Does the function work well for large $n$?
+It then checks which of the roots $\{r_1,...,r_n\}$ are real, and picks among those the internal rate of return. Does the function work well for large $n$?
+
+
+```python
+C_0 = 100  # Initial investment
+x = np.array([20, 26, 40, 55])  # Cash flows, the last payment comes last in this sequence
+
+def IRR(C_0, x):
+    # Reverse the cash flows array to match the polynomial root finding convention
+    x = np.flip(x)
+    
+    # Create the coefficients array for the polynomial equation
+    coefficients = np.concatenate([x, [-C_0]])
+    
+    # Find the roots of the polynomial equation
+    roots = np.roots(coefficients)
+    
+    # Filter out the complex roots, keep only real roots
+    is_real_solution = np.real(roots) == roots
+    roots = roots[is_real_solution]
+    roots = np.real(roots)
+    
+    # Calculate IRR candidates from the real roots
+    IRR_candidates = roots**(-1) - 1
+    
+    # Filter out IRR candidates that are greater than -1
+    IRR = IRR_candidates[IRR_candidates > -1]
+    
+    # Return the IRR if there is a unique solution, otherwise print a message
+    if IRR.size == 1:
+        return IRR[0]
+    else:
+        print("non-unique IRR")
+
+# Call the IRR function with the initial investment and cash flows
+IRR(C_0, x)
+```
+
+
+
+
+    0.1280272166910017
+
+
 
 ## 3. **Newton Methods for General Non-Linear Equations**
 We now try to understand Newton's workhorse optimization routine.
@@ -88,20 +214,42 @@ where:
 ```python
 from scipy.optimize import fsolve
 
-# Define the equation
-def equation(x):
-    return x**3 - x - 2
+# varaible intercept for equation below
+interc = 5
 
-# Initial guess for the root
-initial_guess = 1.0
+def equation(x, interc):
+    return x**3 - x + interc
 
-# Solving for the root
-root = fsolve(equation, initial_guess)
+print("roots found by numpy:", np.roots([1, 0, -1, + interc]))
 
-print(root)
+initial_guess = -2
+x_root, fsolve_dict, code, info = fsolve(equation, initial_guess, args=(interc), full_output=True)
+print(fsolve_dict)
+
+plt.plot(np.linspace(-3, 3, 100),equation(np.linspace(-3, 3, 100), interc))
+plt.axhline(0, color='red', linestyle='--', label='y=0')  # Add horizontal line at y=0
+plt.scatter(x_root, equation(x_root, interc))
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Plot of the Equation with Horizontal Line at y=0')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print("Note that the fsolve routine gets stuck for initial values in the region (-1, 1).")
 ```
 
-    [1.52137971]
+    roots found by numpy: [-1.90416086+0.j          0.95208043+1.31124804j  0.95208043-1.31124804j]
+    {'nfev': 7, 'fjac': array([[-1.]]), 'r': array([-9.87749]), 'qtf': array([1.12003029e-09]), 'fvec': array([0.])}
+
+
+
+    
+![png](4-optimization_files/4-optimization_15_1.png)
+    
+
+
+    Note that the fsolve routine gets stuck for initial values in the region (-1, 1).
 
 
 Let's write a multivariate Newton solver able to solve equations of type $F(x)=0, \; F: \mathbb{R}^n \rightarrow \mathbb{R}^n$. The solver should take as inputs a funtion to solve, `f`, a vector `x0` as a starting point, and a tolerance level `tol` for convergence, as well as a `maxiter` number of iterations after which it stops the solution process.
@@ -180,7 +328,8 @@ def newton(f, x0, tol = 1E-12, maxiter=1_000):
     
     x_old = x0
     x_new = x_old.copy()
-
+    Jf = jacobian(f, x_old)
+    
     for i in range(maxiter):
         
         x_old = x_new.copy()
@@ -218,7 +367,7 @@ newton(f, x0, maxiter=10_000)
 
 **Exercise:** Secant Method
 
-The Secant method is a derivative-free variation of Newton's method. Instead of using the exact derivative $ f'(x) $, it approximates the derivative using two recent points:
+The Secant method is a derivative-free variation of Newton's method. Instead of using the exact derivative $f'(x)$, it approximates the derivative using two recent points:
 
 $$
 x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
@@ -239,21 +388,21 @@ $$
 
 Giving us FOCs:
 $$
-\begin{equation}
+\begin{equation*}
     f_0(\omega, a_0, a_1) = 0, 
-\end{equation}
+\end{equation*}
 $$
 
 $$
-\begin{equation}
+\begin{equation*}
     f_t(a_{t-1}, a_t, a_{t+1}) \equiv \beta (1+r) ( y_{t-1} + a_{t-1}(1+r) - a_t ) - ( y_t + a_t(1+r) -a_{t+1}) = 0 ,\; \forall 1 \leq t \leq T-2 
-\end{equation}
+\end{equation*}
 $$
 
 $$
-\begin{equation}
+\begin{equation*}
     f_{T-2}(a_{T-2}, a_{T-1}, 0) =0 
-\end{equation}
+\end{equation*}
 $$
 
 to solve simultaneously by choosing $a_0, ..., a_{T-1}$. We could do this in a recursive way, but lets attack the FOCs directly.
@@ -276,13 +425,26 @@ def F(beta, r, omega, y, a_choice):
     a[0:-1] = a_choice
 
     F = np.zeros(len(y))
-    F[0] = beta*(1+r)**(-1) * ( 0 + omega * (1+r) - a[0] ) - ( y[0] + a[0]*(1+r) - a[1] )
+    F[0] = beta*(1+r) * ( 0 + omega * (1+r) - a[0] ) - ( y[0] + a[0]*(1+r) - a[1] )
 
     for t in range(1, len(F)):
-        F[t] = beta*(1+r)**(-1) * ( y[t-1] + a[t-1] * (1+r) - a[t] ) - ( y[t] + a[t]*(1+r) - a[t+1] )
+        F[t] = beta*(1+r) * ( y[t-1] + a[t-1] * (1+r) - a[t] ) - ( y[t] + a[t]*(1+r) - a[t+1] )
 
     return F
 ```
+
+
+```python
+F(beta, r, omega, y, a_choice)
+```
+
+
+
+
+    array([4.10204082, 0.        , 0.        , 0.        , 0.        ,
+           0.        , 0.        , 0.        , 0.        , 0.        ])
+
+
 
 
 ```python
@@ -295,8 +457,8 @@ J = jacobian(lambda a_choice : F(beta, r, omega, y, a_choice), a_choice)
 assert np.linalg.det(J) != 0 # check that the jacobian is not ill conditioned
 ```
 
-    F = [ 3.9    -0.0396 -0.0396 -0.0396 -0.0396 -0.0396 -0.0396 -0.0396 -0.0396
-     -0.0396]
+    F = [4.10204082 0.         0.         0.         0.         0.
+     0.         0.         0.         0.        ]
 
 
 Let's try whether this works out, and whether our solver can find a sequence of assets $a = (a_0, ..., a_{T-1})$ to solve the first order conditions:
@@ -330,7 +492,7 @@ plt.show()
 
 
     
-![png](4-optimization_files/4-optimization_23_0.png)
+![png](4-optimization_files/4-optimization_29_0.png)
     
 
 
@@ -393,7 +555,6 @@ class ConSavProb:
         self.y = y
         self.omega = omega
         self.asset_path = None
-        self.a_guess = None
         self.euler_error = None
         self.solved = False
 
@@ -417,7 +578,7 @@ class ConSavProb:
         if omega is not None:
             self.omega = omega
 
-    def solve_asset_path(self, a_guess):
+    def solve_asset_path(self, a_guess=None):
         """
         Solve the consumption-savings problem and compute the asset path.
 
@@ -425,11 +586,25 @@ class ConSavProb:
             a_guess (float): The initial guess for assets.
 
         """
-        self.a_guess = a_guess  # store the guess for later use
-        beta, r, omega, y = self.beta, self.r, self.omega, self.y  # unpack the parameters
+        if a_guess is None:
+            a_guess = np.zeros(len(self.y))
+                        
         # solve
-        self.asset_path, self.euler_error, _ = newton(lambda a: F(beta, r, omega, y, a), a_guess, maxiter=10_000)
+        self.asset_path, self.euler_error, _ = newton(self.FOC, a_guess, maxiter=10_000)
         self.solved = True
+
+    def FOC(self, a_choice):
+        beta, r, omega, y = self.beta, self.r, self.omega, self.y  # unpack the parameters
+        a = np.zeros((1+len(y))) # accommodate initial and terminal condition
+        a[0:-1] = a_choice
+
+        F = np.zeros(len(y))
+        F[0] = beta*(1+r) * ( 0 + omega * (1+r) - a[0] ) - ( y[0] + a[0]*(1+r) - a[1] )
+
+        for t in range(1, len(F)):
+            F[t] = beta*(1+r) * ( y[t-1] + a[t-1] * (1+r) - a[t] ) - ( y[t] + a[t]*(1+r) - a[t+1] )
+
+        return F
 
     def plot_asset_path(self, figsize=(10, 6)):
         """
@@ -459,7 +634,7 @@ class ConSavProb:
 model = ConSavProb(beta, r, y, omega)
 model.solve_asset_path(a_guess = np.full(10, 0))
 
-model.plot_asset_path(figsize=(5, 3))
+model.plot_asset_path(figsize=(7, 4))
 
 ```
 
@@ -468,42 +643,42 @@ model.plot_asset_path(figsize=(5, 3))
 
 
     
-![png](4-optimization_files/4-optimization_27_1.png)
+![png](4-optimization_files/4-optimization_33_1.png)
     
 
 
 
 ```python
 model.update_parameters(beta = 0.85)
-model.solve_asset_path(model.a_guess)
-model.plot_asset_path(figsize=(5, 3))
+model.solve_asset_path(model.asset_path)
+model.plot_asset_path(figsize=(7, 4))
 ```
 
-    convergence achieved after 42 iterations
+    convergence achieved after 30 iterations
 
 
 
     
-![png](4-optimization_files/4-optimization_28_1.png)
+![png](4-optimization_files/4-optimization_34_1.png)
     
 
 
-What, if income were increasing over time?
+What, if income were decreasing from $6$ to $1$ over time, and we had $T=20$ periods instead?
 
 
 ```python
-model.update_parameters(y = np.linspace(0,5, 10), beta = 0.98)
-model.solve_asset_path(model.a_guess)
-model.plot_asset_path(figsize=(5, 3))
+model.update_parameters(y = np.linspace(6,0, 25), beta = 0.85)
+model.solve_asset_path()
+model.plot_asset_path(figsize=(7, 4))
 
 ```
 
-    convergence achieved after 11 iterations
+    convergence achieved after 149 iterations
 
 
 
     
-![png](4-optimization_files/4-optimization_30_1.png)
+![png](4-optimization_files/4-optimization_36_1.png)
     
 
 
@@ -628,12 +803,10 @@ plt.show()
 
 
     
-![png](4-optimization_files/4-optimization_39_0.png)
+![png](4-optimization_files/4-optimization_45_0.png)
     
 
 
 
 
 These examples should give you a good starting point for using `scipy` in various scientific and technical computing tasks.
-
-# Optimization

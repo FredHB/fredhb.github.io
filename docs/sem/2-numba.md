@@ -137,6 +137,7 @@ In its discrete form, the GBM can be expressed as:
 $$ S_{t+\Delta t} = S_t \exp \left( \left( \mu - \frac{\sigma^2}{2} \right) \Delta t + \sigma \sqrt{\Delta t} \, Z_t \right) $$
 
 where:
+
 - $\Delta t$ is the time increment
 - $Z_t$ is a standard normal random variable
 
