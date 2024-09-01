@@ -25,8 +25,8 @@ hide:
         </div>
         <div class="about-info">
           <p>Welcome to my webpage! <br> <br>
-          My research interests are macroeconomics, firm dynamics, and corporate finance. I am interested in understanding how information and financing matter for firm dynamics, and how firm dynamics, in turn, impact long-run output and welfare. <br> <br>
-          In my research, I study how information, financial conditions, and household heterogeneity matter for firm dynamics, and how firm dynamics, in turn, impact long-run output and welfare.</p>
+          I’m a PhD candidate in Financial Economics at the University of Zurich. I hold a MSc in Economics from the Barcelona School of Economics. <br> <br>
+           My research interests are macroeconomics, firm dynamics, and corporate finance. In my research, I study how information, financing, and household heterogeneity matter for firm dynamics, and how firm dynamics, in turn, impact long-run output and welfare.</p>
         </div>
       </div>
     </section>
@@ -40,7 +40,11 @@ hide:
         </div>
         <div class="research-info">
           <ul>
-            <li><i class="fas fa-file-alt"></i> Research Paper Title 1</li>
+            <li><i class="fas fa-file-alt"></i>Igli Bajo, Frederik Bennhoff, Alessandro Ferrari (2024). Not-So-Cleansing Recessions.<span class="ital"> Draft coming soon.</span>
+           <details><summary>Summary</summary>
+            <p>Recessions are periods in which the least productive firms in the economy exit, and as the economy recovers, they are replaced by new and more productive entrants. These *cleansing effects* imply that business cycles generate improvements in the average firm productivity. We argue that this is not sufficient to induce long-run gains in GDP and welfare. We show that these are driven by the intensity of *love-for-variety* in households' preferences. If the household has CES preferences, recessions do not bring about any improvement in GDP and welfare. If the economy features more *love-for-variety* than CES, the social planner finds it optimal to subsidize economic activity in recessions to avoid firm exit.</p>
+            </details>
+            </li>
           </ul>
         </div>
       </div>
@@ -55,9 +59,9 @@ hide:
         </div>
         <div class="work-info">
           <ul>
-            <li><i class="fas fa-file-alt"></i> Paper Title 1</li>
-            <li><i class="fas fa-file-alt"></i> Paper Title 2</li>
-            <li><i class="fas fa-file-alt"></i> Paper Title 3</li>
+            <li><i class="fas fa-file-alt"></i>Igli Bajo, Charles Parry. Why local stock markets matter.</li>
+            <li><i class="fas fa-file-alt"></i>Igli Bajo, Fulvia Oldrini. Information disclosure and firm entry and exit.</li>
+            <li><i class="fas fa-file-alt"></i>Igli Bajo, Jason Blunier. Wealth inequality, concentrations and markups.</li>
           </ul>
         </div>
       </div>
@@ -65,31 +69,48 @@ hide:
 
 === "Teaching"
     <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
-    <section id="research" class="home-section wg-research">
-      <div class="about-grid">
-        <div class="research-title text-center">
+    <section id="teaching" class="home-section wg-teaching">
+      <div class="teaching-grid">
+        <div class="teaching-title text-center">
           <h3>Teaching</h3>
         </div>
-        <div class="research-info">
-          <ul>
-            <li><i class="fas fa-file-alt"></i>Research Paper Title 1</li>
-            <li><i class="fas fa-file-alt"></i>Research Paper Title 2</li>
-            <li><i class="fas fa-file-alt"></i>Research Paper Title 3</li>
-          </ul>
+        <div>
+          <div class="teaching-sub-grid">
+              <div class="teaching-info">
+                <ul class="li-head-list">
+                  <li id="li-head"><strong>Instructor</strong></li>
+                </ul>
+              </div>
+              <div class="teaching-info">
+                <ul>
+                  <li>Python Programming. Powercoders Coding Academy, 2021-2022.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="teaching-sub-grid">
+                <div class="teaching-info">
+                  <ul class="li-head-list">
+                    <li id="li-head"><strong>Teaching Assistant</strong></li>
+                  </ul>
+                </div>
+                <div class="teaching-info">
+                  <ul>
+                    <li>Macroeconomics for Research Students Part I (PhD). University of Zurich, Graduate, Fall 2024.</li>
+                    <li>Real Analysis I. University of Zurich, Graduate, Fall 2023-2024.</li>
+                    <li>Theses Supervision. University of Zurich, Graduate and Undergraduate, 2023-present.</li>
+                  </ul>
+                </div>
+              </div>
         </div>
       </div>
     </section>
 
 
 <!-- TO DOs
-- aggiusta l'aspetto della pagina
-- contenuto research e teaching
-- icon per TA e Instructor per teaching section
-- metti summary del working paper e draft coming come Fred
 - finisci CV
 - collega file CV
 - finisci about section with Fred
-- crea 2 sample blogs
+- create 2 sample blogs
 -->
 
 <!-- Include Font Awesome for icons -->

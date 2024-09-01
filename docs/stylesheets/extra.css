@@ -246,12 +246,26 @@ details[open] summary {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.7fr 2fr;
     gap: 20px;
     align-items: center;
 }
 
-.about-img, .work-title, .research-title {
+.teaching-grid {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.teaching-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 0px;
+    align-items: center;
+}
+
+.about-img, .work-title, .research-title, .teaching-title {
     text-align: center;
 }
 
@@ -268,7 +282,7 @@ details[open] summary {
     margin-bottom: 5px;
 }
 
-.work-title h3, .research-title h3 {
+.work-title h3, .research-title h3, .teaching-title h3 {
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -295,15 +309,16 @@ details[open] summary {
     text-decoration: none;
 }
 
-.about-info, .work-info, .research-info {
+.about-info, .work-info, .research-info, .teaching-info {
     text-align: left;
 }
 
 .about-info p {
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-.work-info ul, .research-info ul {
+.work-info ul, .research-info ul, .teaching-info ul {
     margin-bottom: 0rem;
     margin-top: 1.35rem;
 }
@@ -311,15 +326,29 @@ details[open] summary {
 .work-info ul, .research-info ul {
     list-style: none;
     padding: 0;
+    font-size: 1rem;
 }
 
-.work-info li, .research-info li {
+.teaching-info ul {
+    padding: 0;
+    font-size: 1rem;
+}
+
+.teaching-info .li-head-list {
+    list-style: none;
+}
+
+.work-info li, .research-info li, .teaching-info li {
     margin-bottom: 10px;
 }
 
-.work-info li i, .research-info li i {
+.work-info li i, .research-info li i, .teaching-info li i {
     margin-right: 10px;
     color: #0056b3;
+}
+
+.work-info li span, .research-info li span {
+    font-style: italic;
 }
 
 .about-info .bio {
@@ -334,16 +363,46 @@ details[open] summary {
         grid-row-gap: 20px;
         align-items: center;
     }
+
+    .teaching-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 0px;
+        align-items: center;
+    }
+
+    .teaching-sub-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 0px;
+        align-items: center;
+    }
     
     .work-info ul, .research-info ul {
         margin-top: 0px;
-        margin-bottom: 0;
+        margin-bottom: 0px;
+    }
+
+    .work-info ul li, .research-info ul li {
+        margin-top: 0px;
+        margin-bottom: 20px;
     }
 
     .work-title h3, .research-title h3 {
-        margin-top: 0;
+        margin-top: 10px;
         margin-bottom: 0;
     }
+
+    .teaching-title h3 {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    
+    .teaching-sub-grid .teaching-info #li-head {
+        margin-top: 2px;
+        margin-bottom: 0;
+    }
+
 }
 
 .tabbed-set .tabbed-alternate {
@@ -374,4 +433,12 @@ details[open] summary {
 
 .back-button a:hover {
     color: navy !important;
+}
+
+.work-info details summary, .research-info details summary {
+    font-size: 0.8rem;
+}
+
+.work-info details p, .research-info details p {
+    font-size: 0.75rem;
 }
