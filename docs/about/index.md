@@ -11,8 +11,8 @@ hide:
     <!-- Frederick -->
     <div class="img-grid-item">
         <div class="image-part">
-            <a href="" class="img-wrapper">
-                <img src="IgliBajo_Photo.jpeg" alt="Profile picture of Frederik Bennhoff"/>
+            <a href="../research/research" class="img-wrapper">
+                <img src="FrederikBennhoff_Photo_BW.png" alt="Profile picture of Frederik Bennhoff" onmouseover="hover1(this);" onmouseout="unhover1(this);"/>
             </a>
         </div>
         <div class="review-text-part">
@@ -26,8 +26,8 @@ hide:
     <!-- Igli -->
     <div class="img-grid-item">
         <div class="image-part">
-            <a href="" class="img-wrapper">
-                <img src="IgliBajo_Photo.jpeg" alt="Profile picture of Igli Bajo"/>
+            <a href="../igli/" class="img-wrapper">
+                <img src="IgliBajo_Photo_BW.jpg" alt="Profile picture of Igli Bajo" onmouseover="hover2(this);" onmouseout="unhover2(this);"/>
             </a>
         </div>
         <div class="review-text-part">
@@ -43,6 +43,27 @@ hide:
 Through <b><i>market.clearing</i></b>, we hope to disseminate my research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary.
 
 </div>
+
+
+<script>
+
+function hover1(element) {
+  element.setAttribute('src', 'FrederikBennhoff_Photo.jpg');
+}
+
+function unhover1(element) {
+  element.setAttribute('src', 'FrederikBennhoff_Photo_BW.png');
+}
+
+function hover2(element) {
+  element.setAttribute('src', 'IgliBajo_Photo.jpeg');
+}
+
+function unhover2(element) {
+  element.setAttribute('src', 'IgliBajo_Photo_BW.jpg');
+}
+
+</script>
 
 <!-- **WEBSITE TO DO**
 

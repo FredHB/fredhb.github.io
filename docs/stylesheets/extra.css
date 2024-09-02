@@ -103,7 +103,7 @@ details[open] summary {
 .img-wrapper img {
     cursor: pointer;
     transition: .3s ease-in-out;
-    border-radius: 20%;
+    border: 5px solid black;
 }
 
 .img-wrapper:hover img {
@@ -189,7 +189,7 @@ details[open] summary {
 
 
 
-/* Igli Personal Website */
+/* Igli and Fred Personal Websites */
 
 
 /* Set global margins */
@@ -208,7 +208,7 @@ details[open] summary {
 
 /* Actual css for my webpage */
 
-#igli-bajo {
+#igli-bajo, #frederik-bennhoff {
     display: none;
 } 
 

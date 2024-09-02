@@ -4,8 +4,7 @@ nav:
   - About: 
     - about/index.md
     - Frederik Bennhoff:
-      - Research: research/research.md
-      - CV: cvs/cv_fhb.md
+      - Frederik Bennhoff: fred/index.md
     - Igli Bajo:
       - Igli Bajo: igli/index.md
   - Blog: blog/index.md
