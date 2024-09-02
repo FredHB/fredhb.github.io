@@ -47,6 +47,6 @@ Through <b><i>market.clearing</i></b>, we hope to disseminate our research, shar
 <!-- **WEBSITE TO DO**
 
  - Add GH repository
- - Add a picture
+ - Git add the pictures for the website
  - Add an intro page to *solving economic models*
  - Add place holder page to blog  -->
