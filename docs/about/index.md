@@ -11,7 +11,7 @@ hide:
     <!-- Frederick -->
     <div class="img-grid-item">
         <div class="image-part">
-            <a href="../research/research" class="img-wrapper">
+            <a href="../fred/" class="img-wrapper">
                 <img src="FrederikBennhoff_Photo_BW.png" alt="Profile picture of Frederik Bennhoff" onmouseover="hover1(this);" onmouseout="unhover1(this);"/>
             </a>
         </div>
@@ -20,7 +20,7 @@ hide:
                 <p>
                 My name is Frederik. I am a PhD student in Economics at the University of Zürich, currently visiting LSE.
                 </p>
-                <a href="../research/research" class="read-more">read more</a>
+                <a href="../fred/" class="read-more">read more</a>
         </div>
     </div>
     <!-- Igli -->
@@ -40,30 +40,9 @@ hide:
     </div>
 </div>
 
-Through <b><i>market.clearing</i></b>, we hope to disseminate my research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary.
+Through <b><i>market.clearing</i></b>, we hope to disseminate our research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary.
 
 </div>
-
-
-<script>
-
-function hover1(element) {
-  element.setAttribute('src', 'FrederikBennhoff_Photo.jpg');
-}
-
-function unhover1(element) {
-  element.setAttribute('src', 'FrederikBennhoff_Photo_BW.png');
-}
-
-function hover2(element) {
-  element.setAttribute('src', 'IgliBajo_Photo.jpeg');
-}
-
-function unhover2(element) {
-  element.setAttribute('src', 'IgliBajo_Photo_BW.jpg');
-}
-
-</script>
 
 <!-- **WEBSITE TO DO**
 

@@ -12,7 +12,7 @@ hide:
     <section id="about-sec" class="wg-about-biography">
       <div class="about-grid">
         <div class="about-img text-center">
-          <img src="../about/FrederikBennhoff_Photo.jpg" alt="Picture of Frederik Bennhoff" class="img-responsive img-circle" style="width: 300px; height: auto;">
+          <img src="../about/FrederikBennhoff_Photo_BW.png" alt="Picture of Frederik Bennhoff" class="img-responsive img-circle" style="width: 300px; height: auto; border: 5px solid black; border-radius: 0px; cursor: pointer;" onmouseover="hover1(this);" onmouseout="unhover1(this);">
           <h3>Frederik Bennhoff</h3>
           <p class="headline">PhD Candidate in Economics</p>
           <p class="headline">University of Zurich</p>

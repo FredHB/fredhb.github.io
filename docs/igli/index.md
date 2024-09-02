@@ -12,7 +12,7 @@ hide:
     <section id="about-sec" class="wg-about-biography">
       <div class="about-grid">
         <div class="about-img text-center">
-          <img src="IgliBajo_Photo.jpeg" alt="Picture of Igli Bajo" class="img-responsive img-circle" style="width: 300px; height: auto;">
+          <img src="../about/IgliBajo_Photo.jpeg" alt="Picture of Igli Bajo" class="img-responsive img-circle" style="width: 300px; height: auto; cursor: pointer;">
           <h3>Igli Bajo</h3>
           <p class="headline">PhD Candidate in Finance</p>
           <p class="headline">University of Zurich and</p>

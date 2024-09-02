@@ -80,5 +80,6 @@ extra_css:
   - "stylesheets/extra.css"
 
 extra_javascript:
+  - "js_code/extra.js"
   - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
