@@ -6,7 +6,8 @@ I am interested in Macroeconomics and Public Finance. My macroeconomic research 
 
 During 2019-2021 I was an economist (pre-doctoral fellow) at the *Center for the Economics of Human Development* at *University of Chicago* for Prof. James J. Heckman. My research from this period was mainly focused on public economics and the evaluation of social programs.
 
-
+ <!-- My focus is on macroeconomics. I am specialized in macroeconomic theory and in computational methods in macroeconomics. My doctoral advisors are Florian Scheuer and Felix Kübler. I care about firm dynamics in macroeconomic models; an upcoming theoretical paper of mine with Igli Bajo and Alessandro Ferrari discusses how the productivity distribution of firms in an economy interacts with cleansing effects of recessions. Currently, I am working to apply *sequence-space jacobian* (Auclert, Rognlie & Straub) solution methods in heterogeneous firm models, to learn more about how policy interacts with firms along a transitional path. -->
+ 
 ## Publications
 
 ### Journal Articles

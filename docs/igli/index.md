@@ -108,7 +108,7 @@ hide:
 
 
 <!-- TO DOs
-- finisci about section with Fred
+- finisci about section with Fred and change home index to be the same as in about
 -->
 
 <!-- Include Font Awesome for icons -->
