@@ -1,4 +1,5 @@
 # **Application: Stochastic Processes**
+
 In this notebook we put some of the techniques we just learned to good use. We will:
 - write a function to simulate ARMA(p,q) processes
 - write a function to simulate Markov-processes

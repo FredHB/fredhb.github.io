@@ -3,13 +3,14 @@ site_name: 'market.clearing <br><small><i>economic research and opinion.</i></sm
 nav:
   - About: 
     - about/index.md
-    - "Frederik Bennhoff":
-      - "CV": "cvs/cv_fhb.md"
-      - "Research": "research/index.md"
-    - "Igli Bajo"
-  - "Blog": "blog/index.md"
-  - "Short Courses & Resources":
-    - "Solving Economic Models": 
+    - Frederik Bennhoff:
+      - Research: research/research.md
+      - CV: cvs/cv_fhb.md
+    - Igli Bajo:
+      - Igli Bajo: igli/index.md
+  - Blog: blog/index.md
+  - Short Courses & Resources:
+    - Solving Economic Models: 
       - 1 Numpy: ./sem/1-numpy.md
       - 2 Numba: ./sem/2-numba.md
       - "3 Application: Stochastic Processes": ./sem/3-application_stoch_proc.md
@@ -21,6 +22,7 @@ theme:
   name: "material"
   features:
     - navigation.top
+    - navigation.indexes
   #favicon: "static/favicon.ico"
   logo: "static/logo_bold_small.jpg"  # Update the path to your logo
   # logo:
@@ -41,6 +43,8 @@ theme:
 markdown_extensions:
   - pymdownx.arithmatex  # Render LaTeX math
   - pymdownx.superfences  # Enhanced fenced code blocks
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight  # Syntax highlighting
   - pymdownx.inlinehilite  # Inline syntax highlighting
   - pymdownx.betterem:  # Improved emphasis
@@ -66,6 +70,12 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - pymdownx.details
+  - markdown.extensions.extra
+  - pymdownx.extra
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
   - "stylesheets/extra.css"
