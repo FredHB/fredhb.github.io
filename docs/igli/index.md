@@ -26,7 +26,7 @@ hide:
         </div>
         <div class="about-info">
           <p>Welcome to my webpage! <br> <br>
-          I’m a PhD candidate in Financial Economics at the University of Zurich. I hold a MSc in Economics from the Barcelona School of Economics. <br> <br>
+          My name is Igli. I’m a PhD candidate in Financial Economics at the University of Zurich and the Swiss Finance Institute. I hold a MSc in Economics from the Barcelona School of Economics. <br> <br>
            My research interests are macroeconomics, firm dynamics, and corporate finance. In my research, I study how information, financing, and household heterogeneity matter for firm dynamics, and how firm dynamics, in turn, impact long-run output and welfare.</p>
         </div>
       </div>

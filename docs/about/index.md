@@ -18,7 +18,7 @@ hide:
         <div class="review-text-part">
             <div class="menu-title">Frederik Bennhoff</div>
                 <p>
-                My name is Frederik. I am a PhD student in Economics at the University of Zürich, currently visiting LSE.
+                My name is Frederik. I am a PhD candidate in Economics at the University of Zürich, currently visiting LSE.
                 </p>
                 <a href="../fred/" class="read-more">read more</a>
         </div>
@@ -33,7 +33,7 @@ hide:
         <div class="review-text-part">
             <div class="menu-title">Igli Bajo</div>
                 <p>
-                My name is Igli. I am a PhD student in Financial Economics at the University of Zürich and the Swiss Finance Institute.
+                My name is Igli. I am a PhD candidate in Financial Economics at the University of Zürich and the Swiss Finance Institute.
                 </p>
                 <a href="../igli/" class="read-more">read more</a>
         </div>
