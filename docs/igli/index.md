@@ -18,10 +18,10 @@ hide:
           <p class="headline">University of Zurich and</p>
           <p class="headline">Swiss Finance Institute</p>
           <p>
-            <a href="mailto:igli.bajo@df.uzh.ch"><i class="fas fa-envelope"></i></a>
-            <a href="https://x.com/IgliBajo"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/igli-bajo-6b3483a4/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.linkedin.com/in/igli-bajo-6b3483a4/" class="cv-link">CV</a>  
+            <a href="mailto:igli.bajo@df.uzh.ch" target=”_blank><i class="fas fa-envelope"></i></a>
+            <a href="https://x.com/IgliBajo" target=”_blank><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/igli-bajo-6b3483a4/" target=”_blank><i class="fab fa-linkedin"></i></a>
+            <a href="./CV_IgliBajo.pdf" class="cv-link" target=”_blank”>CV</a>  
           </p>
         </div>
         <div class="about-info">
@@ -41,7 +41,7 @@ hide:
         </div>
         <div class="research-info">
           <ul>
-            <li><i class="fas fa-file-alt"></i>Igli Bajo, Frederik Bennhoff, Alessandro Ferrari (2024). Not-So-Cleansing Recessions.<span class="ital"> Draft coming soon.</span>
+            <li><i class="fas fa-file-alt"></i>"Not-So-Cleansing Recessions", with Frederik Bennhoff and Alessandro Ferrari, 2024.<span class="ital"> Draft coming soon.</span>
            <details><summary>Summary</summary>
             <p>Recessions are periods in which the least productive firms in the economy exit, and as the economy recovers, they are replaced by new and more productive entrants. These *cleansing effects* imply that business cycles generate improvements in the average firm productivity. We argue that this is not sufficient to induce long-run gains in GDP and welfare. We show that these are driven by the intensity of *love-for-variety* in households' preferences. If the household has CES preferences, recessions do not bring about any improvement in GDP and welfare. If the economy features more *love-for-variety* than CES, the social planner finds it optimal to subsidize economic activity in recessions to avoid firm exit.</p>
             </details>
@@ -60,9 +60,9 @@ hide:
         </div>
         <div class="work-info">
           <ul>
-            <li><i class="fas fa-file-alt"></i>Igli Bajo, Charles Parry. Why local stock markets matter.</li>
-            <li><i class="fas fa-file-alt"></i>Igli Bajo, Fulvia Oldrini. Information disclosure and firm entry and exit.</li>
-            <li><i class="fas fa-file-alt"></i>Igli Bajo, Jason Blunier. Wealth inequality, concentrations and markups.</li>
+            <li><i class="fas fa-file-alt"></i>"Why local stock markets matter", with Charles Parry.</li>
+            <li><i class="fas fa-file-alt"></i>"Information disclosure and firm entry and exit", with Fulvia Oldrini.</li>
+            <li><i class="fas fa-file-alt"></i>"Wealth inequality, concentration, and markups", with Jason Blunier.</li>
           </ul>
         </div>
       </div>
@@ -84,7 +84,7 @@ hide:
               </div>
               <div class="teaching-info">
                 <ul>
-                  <li>Python Programming. Powercoders Coding Academy, 2021-2022.</li>
+                  <li>Python Programming, Powercoders Coding Academy, 2021-2022</li>
                 </ul>
               </div>
             </div>
@@ -96,9 +96,9 @@ hide:
                 </div>
                 <div class="teaching-info">
                   <ul>
-                    <li>Macroeconomics for Research Students Part I (PhD). University of Zurich, Graduate, Fall 2024.</li>
-                    <li>Real Analysis I. University of Zurich, Graduate, Fall 2023-2024.</li>
-                    <li>Theses Supervision. University of Zurich, Graduate and Undergraduate, 2023-present.</li>
+                    <li>Macroeconomics for Research Students Part I (PhD), University of Zurich, Graduate, Fall 2024</li>
+                    <li>Real Analysis I, University of Zurich, Graduate, Fall 2023-2024</li>
+                    <li>Theses Supervision, University of Zurich, Graduate and Undergraduate, 2023-present</li>
                   </ul>
                 </div>
               </div>
@@ -108,8 +108,6 @@ hide:
 
 
 <!-- TO DOs
-- finisci CV
-- collega file CV
 - finisci about section with Fred
 -->
 

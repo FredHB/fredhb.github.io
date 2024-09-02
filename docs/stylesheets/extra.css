@@ -205,11 +205,6 @@ details[open] summary {
     margin-top: 0.5rem;
 }
 
-/* .md-content__inner {
-    margin-top: 0;
-    padding-top: 0;
-} */
-
 
 /* Set global text color */
 
@@ -217,11 +212,12 @@ details[open] summary {
     color: black;
 } 
 
+
+/* Actual css for my webpage */
+
 #igli-bajo {
     display: none;
 } 
-
-/* Actual css for my webpage */
 
 .headline {
     padding: 0;
