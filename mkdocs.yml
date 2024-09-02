@@ -17,6 +17,7 @@ nav:
       - 5 Endogenous Grid Method: ./sem/5-endogenous_grid_method.md
 
 theme:
+  custom_dir: material
   name: "material"
   features:
     - navigation.top
