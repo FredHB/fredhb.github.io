@@ -12,7 +12,7 @@ hide:
     <div class="img-grid-item">
         <div class="image-part">
             <a href="" class="img-wrapper">
-                <img src="IgliBajo_Photo.jpeg" alt="Profile picture of Frederik Bennhoff"/>
+                <img src="./about/IgliBajo_Photo.jpeg" alt="Profile picture of Frederik Bennhoff"/>
             </a>
         </div>
         <div class="review-text-part">
@@ -27,7 +27,7 @@ hide:
     <div class="img-grid-item">
         <div class="image-part">
             <a href="" class="img-wrapper">
-                <img src="IgliBajo_Photo.jpeg" alt="Profile picture of Igli Bajo"/>
+                <img src="./about/IgliBajo_Photo.jpeg" alt="Profile picture of Igli Bajo"/>
             </a>
         </div>
         <div class="review-text-part">

@@ -107,9 +107,5 @@ hide:
     </section>
 
 
-<!-- TO DOs
-- finisci about section with Fred and change home index to be the same as in about
--->
-
 <!-- Include Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
