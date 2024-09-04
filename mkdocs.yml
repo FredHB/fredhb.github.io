@@ -10,6 +10,7 @@ nav:
   - Blog: blog/index.md
   - Short Courses & Resources:
     - Solving Economic Models: 
+      - sem/index.md
       - 1 Numpy: ./sem/1-numpy.md
       - 2 Numba: ./sem/2-numba.md
       - "3 Application: Stochastic Processes": ./sem/3-application_stoch_proc.md
