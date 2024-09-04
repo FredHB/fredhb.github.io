@@ -8,7 +8,7 @@ hide:
 <div class="all-about">
 
 <div class="imgs-container">
-    <!-- Frederick -->
+    <!-- Frederik -->
     <div class="img-grid-item">
         <div class="image-part">
             <a href="../fred/" class="img-wrapper">
