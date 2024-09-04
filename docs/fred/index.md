@@ -17,34 +17,37 @@ hide:
           <p class="headline">PhD Candidate in Economics</p>
           <p class="headline">University of Zurich</p>
           <p>
-            <a href="mailto:igli.bajo@df.uzh.ch" target=”_blank><i class="fas fa-envelope"></i></a>
-            <a href="https://x.com/IgliBajo" target=”_blank><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/igli-bajo-6b3483a4/" target=”_blank><i class="fab fa-linkedin"></i></a>
-            <a href="./CV_IgliBajo.pdf" class="cv-link" target=”_blank”>CV</a>  
+            <a href="mailto:frederik.bennhoff@econ.uzh.ch" target="_blank">
+                <i class="fas fa-envelope" style="color: black; transition: transform 0.2s;" onmouseover="this.style.transform='scale(0.9)'; this.style.color='red';" onmouseout="this.style.transform='scale(1)'; this.style.color='black';"></i></a>
+            <a href="https://scholar.google.com/citations?user=ng02LRMAAAAJ&hl=en" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=pU44R9xgF3wq&format=png&color=000000" alt="Google Scholar" style="width: 24px; height: 24px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(0.9)'; this.src='https://img.icons8.com/?size=100&id=pU44R9xgF3wq&format=png&color=FF0000';" onmouseout="this.style.transform='scale(1)'; this.src='https://img.icons8.com/?size=100&id=pU44R9xgF3wq&format=png&color=000000';"></a>
+            <a href="https://github.com/FredHB"><i class="fab fa-github-square" style="color: black; transition: transform 0.2s;" onmouseover="this.style.transform='scale(0.9)'; this.style.color='red';" onmouseout="this.style.transform='scale(1)';  this.style.color='black';"></i></a>
+            <a href="https://www.linkedin.com/in/f-h-bennhoff/"><i class="fab fa-linkedin" style="color: black; transition: transform 0.2s;" onmouseover="this.style.transform='scale(0.9)'; this.style.color='red';" onmouseout="this.style.transform='scale(1)';  this.style.color='black';"></i></a>
           </p>
         </div>
         <div class="about-info">
-          <p>Welcome to my webpage! <br> <br>
-           I’m a PhD candidate in Economics at the University of Zurich. I hold a MPhil in Economic Research from the University of Cambridge. <br> <br>
-           My focus is on macroeconomics. I am specialized in macroeconomic theory and in computational methods in macroeconomics. My doctoral advisors are Florian Scheuer and Felix Kübler. I care about firm dynamics in macroeconomic models; an upcoming theoretical paper of mine with Igli Bajo and Alessandro Ferrari discusses how the productivity distribution of firms in an economy interacts with cleansing effects of recessions. Currently, I am working to apply <i>sequence-space jacobian</i> (Auclert, Rognlie & Straub) solution methods in heterogeneous firm models, to learn more about how policy interacts with firms along a transitional path.</p>
+          <p>
+           I am a PhD candidate in Economics at the University of Zurich, currently visiting STICERD at the London School of Economics. I hold a MPhil in Economic Research from the University of Cambridge. <br>
+           <br>
+           I specialize in public finance and in theory and computational methods in macroeconomics. In public finance, I study how end-of-life provisions of capital gains taxation distort portfolio choices. In macroeconomics, I study firm dynamics in macroeconomic models; an upcoming theoretical paper of mine with Igli Bajo and Alessandro Ferrari discusses how the productivity distribution of firms in an economy interacts with cleansing effects of recessions. Currently, I am working to apply <i>sequence-space jacobian</i> (Auclert, Rognlie & Straub) solution methods in heterogeneous firm models, to learn more about how policy interacts with firms along a transitional path.<br><br>
+           During 2019-2021 I was an economist (pre-doctoral fellow) at the *Center for the Economics of Human Development* at *University of Chicago* for Prof. James J. Heckman. My research from this period was mainly focused on labor economics and the evaluation of social programs.
+           </p>
         </div>
       </div>
     </section>
 
 === "Research"
-    <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
+    <span class="back-button" >[:fontawesome-solid-house:](../about/index.md)</span>
 
-    # Research and Publications
+    ## **Research Statement**
 
-    ## Research Statement
+    I am interested in Macroeconomics and Public Finance. My macroeconomic research can be best summarized as **firms in general equilibrium**. I am interested in models which capture firm dynamics through the business cycle, and their interaction with fiscal and monetary policy. In public finance, I am working on **capital gains and inter-generational taxation**. Specifically, I am working to disentangle the effects of end-of-life provisions on portfolio choice and size of inheritances. My doctoral advisors are Florian Scheuer and Felix Kübler.
 
-    I am interested in Macroeconomics and Public Finance. My macroeconomic research can be best summarized as **firms in general equilibrium**. I am interested in models which capture firm dynamics through the business cycle, and their interaction with fiscal and monetary policy. In public finance, I am working on **capital gains and inter-generational taxation**. Specifically, I am working to disentangle the effects of end-of-life provisions on portfolio choice and size of inheritances.
 
-    During 2019-2021 I was an economist (pre-doctoral fellow) at the *Center for the Economics of Human Development* at *University of Chicago* for Prof. James J. Heckman. My research from this period was mainly focused on public economics and the evaluation of social programs.
 
-    ## Publications
+    ## **Publications**
 
-    ### Journal Articles
+    ### **Journal Articles**
 
     1.  **The Dynastic Benefits of Early-Childhood Education: Participant Benefits and Family Spillovers** \[[link](https://scholar.google.ch/citations?view_op=view_citation&hl=en&user=ng02LRMAAAAJ&citation_for_view=ng02LRMAAAAJ:8k81kl-MbHgC)\] <br>
         Frederik H. Bennhoff, Jorge L. García, Duncan Ermini Leaf <br>
@@ -53,9 +56,9 @@ hide:
         ???+ Summary
             <div> We demonstrate the social efficiency of investing in high-quality early-childhood education using newly collected data from the HighScope Perry Preschool Project. The data analyzed are the longest follow-up of any randomized early-childhood education program. Annual observations of participant outcomes up to midlife allow us to provide a cost-benefit analysis without relying on forecasts. Adult outcomes on the participants’ children and siblings allow us to quantify spillover benefits. The program generates a benefit-cost ratio of 6.0 (*p*-value = .03). Spillover benefits increase this ratio to 7.5 (*p*-value = .00)</div>
 
-    ## Working Papers & Ongoing Projects
+    ### **Working Papers & Ongoing Projects**
 
-    1.  **Not-So-Cleaning Recessions** <br>
+    2.  **Not-So-Cleaning Recessions** <br>
         Igli Bajo, Frederik H. Bennhoff, Alessandro Ferrari <br>
         *Draft in preparation.*
 
@@ -72,50 +75,6 @@ hide:
 === "CV"
     <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
     
-    # **Frederik H. Bennhoff**
-
-    - **Email:** [frederik.bennhoff@econ.uzh.ch](mailto:frederik.bennhoff@econ.uzh.ch)  
-
-    ---
-
-    ## **Research Interests**
-
-    - Macroeconomics
-    - Macro-Finance
-    - Public Economics
-    - Capital Gains Taxation
-    - Monetary and Fiscal Interactions
-
-    ---
-
-    ## **Education**
-
-    **University of Cambridge (Trinity Hall)**  
-    *Cambridge, UK*  
-    ***MPhil in Economic Research and Advanced Diploma in Economics***  
-    *Sep. 2017 -- Jul. 2019*
-
-    - Graduated MPhil with *high distinction and award* (GPA: 79/100), and Diploma *best in class (1/25), with distinction and award* (GPA: 74/100).
-    - Specialization in time-series statistics, MPhil dissertation in econometrics (Professor Oliver B. Linton)<!--: *Unjust Ranks: Estimating inequality in the US with spatially disaggregated data*, fourth best dissertation of the year. -->
-
-    <br>
-    **London School of Economics**  
-    *London, UK*  
-    ***Mathematics; General Course Programme (Year abroad)***  
-    *Sep. 2016 -- Jun. 2017*  
-
-    - GPA: 79/100, distinction level.
-
-    <br>
-    **University of Münster**  
-    *Münster, DE*  
-    ***BSc. in Business Administration***  
-    *Apr. 2013 -- Sep. 2016*
-
-    - Graduated top 5% of year, specialization & thesis in asset pricing, corporate finance, financial accounting.
-
-    ---
-
     ## **Employment**
 
     **Doktorand (PhD) --- University of Zürich (UZH)**  
@@ -153,7 +112,33 @@ hide:
     - Evaluation of non-listed companies using DCF and WACC, joined KPMG HighQ talent pool.
 
     ---
+    ## **Education**
 
+    **University of Cambridge (Trinity Hall)**  
+    *Cambridge, UK*  
+    ***MPhil in Economic Research and Advanced Diploma in Economics***  
+    *Sep. 2017 -- Jul. 2019*
+
+    - Graduated MPhil with *high distinction and award* (GPA: 79/100), and Diploma *best in class (1/25), with distinction and award* (GPA: 74/100).
+    - Specialization in time-series statistics, MPhil dissertation in econometrics (Professor Oliver B. Linton)<!--: *Unjust Ranks: Estimating inequality in the US with spatially disaggregated data*, fourth best dissertation of the year. -->
+
+    <br>
+    **London School of Economics**  
+    *London, UK*  
+    ***Mathematics; General Course Programme (Year abroad)***  
+    *Sep. 2016 -- Jun. 2017*  
+
+    - GPA: 79/100, distinction level.
+
+    <br>
+    **University of Münster**  
+    *Münster, DE*  
+    ***BSc. in Business Administration***  
+    *Apr. 2013 -- Sep. 2016*
+
+    - Graduated top 5% of year, specialization & thesis in asset pricing, corporate finance, financial accounting.
+
+    ---
     ## **Awards and Honors**
 
     **Doc.Mobility Studentship**  
@@ -188,61 +173,43 @@ hide:
 
     ---
 
-    ## **Teaching Experience**
-
+=== "Teaching"
+    <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
+    <br>
     **Macroeconomics for PhD Students**  
     *University of Zürich, Fall 2023*  
+
     - Role: Teaching Assistant
 
     <br>
     **Programming Practices for PhD Students**  
     *University of Zürich, Fall 2023 & Fall 2024*  
+
     - Role: Instructor
+    - I have taught Python and R to PhD students. Since 2024, I have included a module *Solving Economic Models*, which you can access in the [resources](../sem/1-numpy) section of **market.clearing** 
 
     <br>
     **Advanced Statistics for MSc. Students**  
     *University of Zürich, Fall 2022*  
+
     - Role: Teaching Assistant
-
-
-=== "Teaching"
-    <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
-    <section id="teaching" class="home-section wg-teaching">
-      <div class="teaching-grid">
-        <div class="teaching-title text-center">
-          <h3>Teaching</h3>
-        </div>
-        <div>
-          <div class="teaching-sub-grid">
-              <div class="teaching-info">
-                <ul class="li-head-list">
-                  <li id="li-head"><strong>Instructor</strong></li>
-                </ul>
-              </div>
-              <div class="teaching-info">
-                <ul>
-                  <li>Python Programming, Powercoders Coding Academy, 2021-2022</li>
-                </ul>
-              </div>
-            </div>
-            <div class="teaching-sub-grid">
-                <div class="teaching-info">
-                  <ul class="li-head-list">
-                    <li id="li-head"><strong>Teaching Assistant</strong></li>
-                  </ul>
-                </div>
-                <div class="teaching-info">
-                  <ul>
-                    <li>Macroeconomics for Research Students Part I (PhD), University of Zurich, Graduate, Fall 2024</li>
-                    <li>Real Analysis I, University of Zurich, Graduate, Fall 2023-2024</li>
-                    <li>Theses Supervision, University of Zurich, Graduate and Undergraduate, 2023-present</li>
-                  </ul>
-                </div>
-              </div>
-        </div>
-      </div>
-    </section>
 
 
 <!-- Include Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!--
+- **Email:** [frederik.bennhoff@econ.uzh.ch](mailto:frederik.bennhoff@econ.uzh.ch)  
+    
+    ---
+
+    ## **Research Interests**
+
+    - Macroeconomics
+    - Macro-Finance
+    - Public Economics
+    - Capital Gains Taxation
+    - Monetary and Fiscal Interactions
+
+    ---
+-->
