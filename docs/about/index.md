@@ -4,6 +4,8 @@ hide:
 ---
 
 # **About** 
+We are two economists and PhD candidates at the University of Zürich. Through <b><i>market.clearing</i></b>, we hope to disseminate our research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary. We are specialized in the fields public economics, macroeconomics and monetary economics.
+
 
 <div class="all-about">
 
@@ -39,8 +41,6 @@ hide:
         </div>
     </div>
 </div>
-
-Through <b><i>market.clearing</i></b>, we hope to disseminate our research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary.
 
 </div>
 
