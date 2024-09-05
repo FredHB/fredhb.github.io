@@ -8,8 +8,9 @@
     text-align: justify;
 }
 
-.md-ellipsis {
+.md-header__topic .md-ellipsis {
     font-family: "Futura", "Overpass"; 
+    font-weight: bold;
 }
 
 
