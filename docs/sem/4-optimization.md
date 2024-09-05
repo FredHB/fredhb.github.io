@@ -387,6 +387,7 @@ $$
 $$
 
 Giving us FOCs:
+
 $$
 \begin{equation*}
     f_0(\omega, a_0, a_1) = 0, 
