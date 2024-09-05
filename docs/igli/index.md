@@ -97,7 +97,7 @@ hide:
                 <div class="teaching-info">
                   <ul>
                     <li>Macroeconomics for Research Students Part I (PhD), University of Zurich, Graduate, Fall 2024</li>
-                    <li>Real Analysis I, University of Zurich, Graduate, Fall 2023-2024</li>
+                    <li>Real Analysis I, University of Zurich, Graduate, Fall 2023 and 2024</li>
                     <li>Theses Supervision, University of Zurich, Graduate and Undergraduate, 2023-present</li>
                   </ul>
                 </div>
