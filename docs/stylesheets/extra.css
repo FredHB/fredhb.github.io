@@ -271,10 +271,6 @@ details[open] summary {
     font-weight: 500;
 }
 
-.about-img img:hover {
-    transform: scale(1.05);
-}
-
 .about-img a {
     color: #0056b3;
     margin: 0px 3px;
