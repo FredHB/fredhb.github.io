@@ -18,13 +18,13 @@ nav:
       - 5 Endogenous Grid Method: ./sem/5-endogenous_grid_method.md
 
 theme:
-  custom_dir: material
-  name: "material"
+  name: material
+  custom_dir: overrides
   features:
     - navigation.top
     - navigation.indexes
-  #favicon: "static/favicon.ico"
-  logo: "static/logo_bold_small.jpg"  # Update the path to your logo
+  favicon: assets/images/logo.jpg
+  logo: assets/images/logo.jpg  # Update the path to your logo
   # logo:
   #   icon: "home"
   #palette:
@@ -81,6 +81,6 @@ extra_css:
   - "stylesheets/extra.css"
 
 extra_javascript:
-  - "js_code/extra.js"
+  - "javascripts/extra.js"
   - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
