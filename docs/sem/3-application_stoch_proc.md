@@ -420,15 +420,16 @@ M
 
 
 ## Rouwenhorst Method to Approximate an AR(1) Process with a Markov Chain
+We discuss how to approximate an AR(1) process with a finite state-space markov chain. This section is inspired by material in [this repository](https://github.com/shade-econ/nber-workshop-2023/blob/bc3bbba90ab575f09c4c8a9e77b0b2fe88812cd1/Lectures/Lecture%201%2C%20Standard%20Incomplete%20Markets%20Steady%20State.ipynb) by Matt Rognlie.
 
 ### Advantages of the Rouwenhorst Method:
 
-- **Flexibility:** The Rouwenhorst method is particularly useful for approximating AR(1) processes with high persistence (i.e., when $ \rho $ is close to 1) because it can accommodate the high persistence and the correct distribution properties of the AR(1) process.
-- **Accuracy:** It provides a good approximation with relatively few states (even with a small $ n $), making it computationally efficient.
+- **Flexibility:** The Rouwenhorst method is particularly useful for approximating AR(1) processes with high persistence (i.e., when $\rho$ is close to 1) because it can accommodate the high persistence and the correct distribution properties of the AR(1) process.
+- **Accuracy:** It provides a good approximation with relatively few states (even with a small $n$), making it computationally efficient.
 
 ---
 
-For an arbitrary Markov process mapping to income states and corresponding income levels $ y $, consider the simplest case:
+For an arbitrary Markov process mapping to income states and corresponding income levels, $y$, consider the simplest case:
 
 $$
 \begin{align*}
