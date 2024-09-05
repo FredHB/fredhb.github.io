@@ -65,6 +65,22 @@
 
   }
 
+
+
+
+/* H2 alignment markdowns on phone */
+
+@media (max-width: 790px) {
+
+    .md-typeset h2, .md-typeset h1, .md-typeset h3 {
+        text-align: left;
+    } 
+    
+}
+
+
+
+
 /* FOR THE DETAILS BLOCKS   */
 details {
     background-color: #f9f9f9;
