@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoom Animation</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
         body {
             display: flex;
             justify-content: center;
@@ -13,15 +14,6 @@
             height: 100vh;
             margin: 0;
             background-color: #fdfdfd;
-        }
-        .zoom-square {
-            width: 10px;
-            height: 10px;
-            background-color: black;
-            transition: transform 0.3s ease-in-out;
-        }
-        .zoom-square:hover {
-            transform: scale(10);
         }
         .zoom-svg {
             width: 120px;
@@ -39,9 +31,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.0);
             color: #000000; /* Change this to your desired text color */
             font-weight: normal;  /* Adjust the font weight as needed */
-            font-family: "Futura", "Overpass"; 
             text-align: justify;
-            font-size: 14pt;
+        }
+        .text-container p {
+            font-family: "Futura", "Overpass";
+            font-size: 1.5rem;
         }
         .slide-in-blurred-top{
             -webkit-animation:slide-in-blurred-top .6s cubic-bezier(.23,1.000,.32,1.000) both;
