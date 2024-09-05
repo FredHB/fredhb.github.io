@@ -8,20 +8,23 @@ The standard incomplete markets model features the following timing:
 - begin of period with asset returns $(1+r)a$ and stochastic income $y$.
 - allocate to assets tomorrow $a'$ and consumption today $c$
 - all subject to a borrowing constraint $a\geq \underline a$ and no ability to insure against idiosyncratic shocks: 
+  
   $$ 
-  \begin{align*}
+  \begin{equation}
     V(y, a) = \max_{c, a'} u( c ) + \beta \mathbb E[V(e', a') | y] 
-  \end{align*}
+  \end{equation}
   $$ 
+
   $$ 
-  \begin{align*}
+  \begin{equation}
     s.t.\; a' = (1+r)a + y - c 
-  \end{align*}
+  \end{equation}
   $$ 
+
   $$ 
-  \begin{align*}
+  \begin{equation}
     a' \geq \underline a 
-  \end{align*}
+  \end{equation}
   $$
 
   We model the income process as an AR(1), so 
@@ -54,14 +57,14 @@ Grids = Grid(n_y = 10, rho = 0.975,  sd_log_y = 0.7, n_a = 100, min_a = 0, max_a
     the steady state is unique.
 
 
-## 2. **Backwards Iteration to Obtain Policy Functions**
+## 2. **Backward Iteration to Obtain Policy Functions**
 
 It is more efficient and accurate to use envelope condition and FOC to iterate on marginal value function $V_a$ instead of finding the value function itself. We do backwards iteration in time. Let $a_t'(y_t, a_t)$ be the policy function for next-period asset holdings. Assume that $u(c) = \frac{c^{1-\sigma}}{1-\sigma}$, where $\sigma$ is the elasiticity of intertemporal substitution (eis).
 
 For backward iteration, we use the **Envelope condition**,
 $$ V_{a,t}(e, a) = (1+r_t)u'(c_t(e, a))$$
 
-and the **First-Order Condition** (inequality binds if borrowing limit binds) 
+and the **First-Order Condition** (inequality is slack if borrowing limit binds) 
 
 $$u'(c_t(y, a)) \geq \beta \mathbb E [V_{a, t+1}(y', a_t'(y, a))]|e]. $$
 
@@ -70,13 +73,14 @@ repeatedly:
 **[Algorithm: Backward iteration in time]** 
 
 Start at $t = T$, initialize $V_{a, T} = 1$. For $t< T$:
+
 1. Use $V_{a, t+1}$ to calculate RHS of FOC
 2. Solve for today's policies $a_t'(y, a)$, $c_t(y, a)$
 3. Using envelope condition, obtain marginal value function of today $V_{a, t}$
 
 We go through the steps in detail.
 
-#### **Step 1** - Initialize, Set up Grids and Parameters
+**Step 1** - Initialize, Set up Grids and Parameters
 
 
 ```python
@@ -102,7 +106,7 @@ Va = np.ones((Grids.n_y, Grids.n_a))
 W = model_params['beta'] * Grids.Pi @ Va
 ```
 
-#### **Step 2** - Obtain $a^\prime_{t}$, $W_{t}$
+**Step 2** - Obtain $a^\prime_{t}$, $W_{t}$
 We now write policy functions, marginal value function and associated objects as functions on the grid indices $i_y$ and $i_a$ whenever useful. We would like to solve for consumption policy using the FOC (assuming the constraint is slack)
 $$ u'(c_t) = W_{a,t}(y, a') \Rightarrow c_t = \left( W_{a,t}(y, a') \right)^{-1/\sigma}$$
 for each possible future asset level $a'$. Then we use the envelope condition and can obtain $V_t(y, a)$, where $a$ solves $a' = (1+r)a + y - c_t(y, a')$.
@@ -165,15 +169,15 @@ plt.show()
 ![png](5-endogenous_grid_method_files/5-endogenous_grid_method_12_0.png)
     
 
-
-#### **Step 3** - Obtain $V_{t, a}$
+**Step 3** - Obtain $V_{t, a}$
 
 
 ```python
 V_a = (1 + model_params['r']) * c **(-1/model_params['eis']) # update value function derivative
 ```
 
-### **Combine Steps into single Backward Iteration**
+**Combine Steps into single Backward Iteration**
+
 Now we write a function which takes as input a marginal value function, income and asset grids, preference parameters and transition matrices to compute a single backward iteration and output objects `V_a, a, c`.
 
 
