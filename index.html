@@ -1,561 +1,63 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      
-        <link rel="next" href="cvs/cv_fhb/">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
-    
-    
-      
-        <title>market.clearing <br> <small><i>economic research and opinion.</i></small></title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"IBM Plex Serif";--md-code-font:"IBM Plex Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="stylesheets/extra.css">
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
+<!-- for animations: https://animista.net/play/entrances/slide-in-blurred -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>market.clearing</title>
+    <link rel="icon" href="./assets/images/logo.jpg" type="image/jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdfdfd;
+        }
+        .zoom-svg {
+            width: 120px;
+            height: 120px;
+            transition: transform 0.4s ease-in-out;
+        }
+        .zoom-svg:hover {
+            transform: scale(.75);
+        }
+        .text-container {
+            position:absolute;
+            top:100px;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.0);
+            color: #000000; /* Change this to your desired text color */
+            font-weight: normal;  /* Adjust the font weight as needed */
+            text-align: justify;
+        }
+        .text-container p {
+            font-family: "Futura", "Overpass";
+            font-size: 1.5rem;
+        }
+        .slide-in-blurred-top{
+            -webkit-animation:slide-in-blurred-top .6s cubic-bezier(.23,1.000,.32,1.000) both;
+            animation:slide-in-blurred-top .6s cubic-bezier(.23,1.000,.32,1.000) both
+        }
+        @-webkit-keyframes slide-in-blurred-top{0%{-webkit-transform:translateY(-1000px) scaleY(2.5) scaleX(.2);transform:translateY(-1000px) scaleY(2.5) scaleX(.2);-webkit-transform-origin:50% 0;transform-origin:50% 0;-webkit-filter:blur(40px);filter:blur(40px);opacity:0}100%{-webkit-transform:translateY(0) scaleY(1) scaleX(1);transform:translateY(0) scaleY(1) scaleX(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes slide-in-blurred-top{0%{-webkit-transform:translateY(-1000px) scaleY(2.5) scaleX(.2);transform:translateY(-1000px) scaleY(2.5) scaleX(.2);-webkit-transform-origin:50% 0;transform-origin:50% 0;-webkit-filter:blur(40px);filter:blur(40px);opacity:0}100%{-webkit-transform:translateY(0) scaleY(1) scaleX(1);transform:translateY(0) scaleY(1) scaleX(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <p><strong>market.clearing</strong></p>
     </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="market.clearing &lt;br&gt; &lt;small&gt;&lt;i&gt;economic research and opinion.&lt;/i&gt;&lt;/small&gt;" class="md-header__button md-logo" aria-label="market.clearing <br> <small><i>economic research and opinion.</i></small>" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
+    <a href="about/index.html">
+        <svg class="zoom-svg" version="1.0" xmlns="http://www.w3.org/2000/svg"  width="900.000000pt" height="891.000000pt" viewBox="0 0 900.000000 891.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,891.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"> <path d="M450 8663 c-42 -8 -106 -60 -136 -110 l-29 -48 0 -4005 0 -4005 23 -42 c28 -50 79 -93 140 -116 39 -16 328 -17 4000 -17 3747 0 3960 1 4006 17 68 25 138 96 157 159 12 42 14 628 14 4004 0 3487 -2 3961 -15 4004 -19 63 -91 140 -146 155 -28 8 -1187 11 -4014 10 -2186 -1 -3986 -4 -4000 -6z m7686 -4148 c0 -2013 -3 -3670 -7 -3683 l-9 -22 -3672 2 -3673 3 -3 3683 -2 3682 3682 -2 3683 -3 1 -3660z"/> <path d="M7183 7585 c-60 -28 -59 -27 -1213 -1195 -1137 -1150 -1516 -1530 -1526 -1530 -6 0 -83 74 -173 165 l-164 164 72 76 72 76 -167 164 c-92 91 -172 165 -178 165 -6 0 -41 -30 -78 -67 l-68 -68 -1008 1006 c-1081 1080 -1026 1029 -1126 1029 -101 0 -209 -80 -233 -173 -17 -61 -16 -78 3 -145 16 -55 31 -70 1015 -1055 550 -549 999 -1004 999 -1011 0 -6 -22 -34 -50 -61 -27 -27 -50 -55 -50 -61 0 -7 72 -85 161 -173 126 -127 165 -160 180 -156 11 4 36 26 56 51 21 24 45 44 54 44 11 0 261 -240 336 -324 1 -1 -208 -213 -465 -472 -1526 -1537 -2171 -2191 -2202 -2235 -33 -48 -35 -55 -34 -128 0 -84 15 -119 71 -176 68 -67 183 -86 269 -44 30 14 281 261 866 852 453 457 1053 1062 1333 1344 l510 513 1345 -1346 c1034 -1034 1355 -1349 1389 -1364 58 -27 149 -27 200 0 122 62 177 209 120 323 -14 29 -442 463 -1366 1388 l-1344 1346 353 354 c194 196 555 560 803 810 247 250 694 699 991 999 589 592 584 587 584 697 0 95 -71 191 -166 226 -64 23 -108 21 -171 -8z"/> <path d="M5440 7229 c-157 -160 -286 -299 -288 -310 -5 -27 292 -329 324 -329 14 0 114 96 310 296 159 163 289 300 289 305 0 17 -319 329 -335 328 -8 0 -143 -131 -300 -290z"/> <path d="M4520 6299 c-157 -160 -288 -297 -292 -304 -8 -13 300 -327 326 -333 13 -3 581 561 600 595 7 13 -24 49 -153 175 -89 87 -169 158 -179 158 -9 0 -145 -131 -302 -291z"/> <path d="M2684 4444 c-159 -162 -291 -300 -293 -306 -4 -11 290 -312 322 -329 15 -9 62 34 310 286 161 164 294 304 295 312 5 19 -306 333 -329 333 -9 0 -146 -133 -305 -296z"/> <path d="M1766 3518 c-163 -166 -296 -305 -296 -309 0 -6 269 -280 317 -321 19 -17 26 -11 264 228 361 364 359 362 359 371 0 11 -326 333 -338 333 -5 0 -142 -136 -306 -302z"/> </g> </svg> 
+        <!--<svg class="zoom-svg" version="1.0" xmlns="http://www.w3.org/2000/svg"  width="300.000000pt" height="293.000000pt" viewBox="0 0 300.000000 293.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,293.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"> <path d="M183 2790 c-14 -6 -24 -21 -28 -42 -3 -18 -4 -605 -3 -1305 2 -1027 6 -1275 16 -1285 11 -11 259 -14 1297 -16 826 -1 1292 1 1309 8 l26 10 0 1310 0 1310 -26 10 c-32 13 -2560 12 -2591 0z m2527 -1320 l0 -1230 -1230 0 -1230 0 0 1230 0 1230 1230 0 1230 0 0 -1230z"/> <path d="M1930 1995 l-455 -455 -77 77 -78 77 62 63 63 63 -33 32 -32 33 -62 -63 -63 -62 -340 340 c-187 187 -346 340 -353 340 -16 0 -52 -36 -52 -52 0 -7 153 -166 340 -353 l340 -340 -57 -58 -58 -57 33 -32 32 -32 53 52 c29 28 57 52 63 52 5 0 42 -33 82 -73 l73 -73 -446 -451 c-473 -480 -480 -488 -419 -515 24 -11 39 2 480 443 l454 454 453 -453 c249 -248 458 -452 465 -452 16 0 52 36 52 52 0 7 -204 216 -452 465 l-453 453 140 143 c77 78 281 284 453 457 171 174 312 321 312 328 0 16 -37 52 -53 52 -6 0 -217 -205 -467 -455z"/> <path d="M1862 2377 c-29 -29 -52 -57 -52 -63 0 -6 14 -23 30 -39 l30 -29 60 59 60 59 -32 33 c-18 18 -35 33 -38 33 -3 0 -29 -24 -58 -53z"/> <path d="M1681 2189 l-60 -64 31 -32 32 -33 58 57 c32 32 58 62 58 68 0 6 -13 24 -29 39 l-29 28 -61 -63z"/> <path d="M1497 2002 l-57 -58 33 -32 33 -32 59 60 59 60 -29 30 c-16 16 -31 30 -35 30 -3 0 -31 -26 -63 -58z"/> <path d="M952 1457 c-29 -29 -52 -57 -52 -63 0 -6 14 -23 31 -40 l31 -29 59 64 60 64 -28 29 c-15 15 -32 28 -38 28 -6 0 -34 -24 -63 -53z"/> <path d="M767 1272 l-57 -58 35 -34 35 -34 60 59 60 59 -32 33 c-18 18 -35 33 -38 33 -3 0 -31 -26 -63 -58z"/> <path d="M592 1087 l-62 -63 33 -32 33 -32 62 63 62 63 -33 32 -33 32 -62 -63z"/> </g> </svg> -->
     </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            market.clearing <br> <small><i>economic research and opinion.</i></small>
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              About
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="market.clearing &lt;br&gt; &lt;small&gt;&lt;i&gt;economic research and opinion.&lt;/i&gt;&lt;/small&gt;" class="md-nav__button md-logo" aria-label="market.clearing <br> <small><i>economic research and opinion.</i></small>" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
+    <!--
+    <a href="about/index.html">
+        <svg class="slide-in-blurred-top" version="1.0" xmlns="http://www.w3.org/2000/svg"  width="300.000000pt" height="293.000000pt" viewBox="0 0 300.000000 293.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,293.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"> <path d="M183 2790 c-14 -6 -24 -21 -28 -42 -3 -18 -4 -605 -3 -1305 2 -1027 6 -1275 16 -1285 11 -11 259 -14 1297 -16 826 -1 1292 1 1309 8 l26 10 0 1310 0 1310 -26 10 c-32 13 -2560 12 -2591 0z m2527 -1320 l0 -1230 -1230 0 -1230 0 0 1230 0 1230 1230 0 1230 0 0 -1230z"/> <path d="M1930 1995 l-455 -455 -77 77 -78 77 62 63 63 63 -33 32 -32 33 -62 -63 -63 -62 -340 340 c-187 187 -346 340 -353 340 -16 0 -52 -36 -52 -52 0 -7 153 -166 340 -353 l340 -340 -57 -58 -58 -57 33 -32 32 -32 53 52 c29 28 57 52 63 52 5 0 42 -33 82 -73 l73 -73 -446 -451 c-473 -480 -480 -488 -419 -515 24 -11 39 2 480 443 l454 454 453 -453 c249 -248 458 -452 465 -452 16 0 52 36 52 52 0 7 -204 216 -452 465 l-453 453 140 143 c77 78 281 284 453 457 171 174 312 321 312 328 0 16 -37 52 -53 52 -6 0 -217 -205 -467 -455z"/> <path d="M1862 2377 c-29 -29 -52 -57 -52 -63 0 -6 14 -23 30 -39 l30 -29 60 59 60 59 -32 33 c-18 18 -35 33 -38 33 -3 0 -29 -24 -58 -53z"/> <path d="M1681 2189 l-60 -64 31 -32 32 -33 58 57 c32 32 58 62 58 68 0 6 -13 24 -29 39 l-29 28 -61 -63z"/> <path d="M1497 2002 l-57 -58 33 -32 33 -32 59 60 59 60 -29 30 c-16 16 -31 30 -35 30 -3 0 -31 -26 -63 -58z"/> <path d="M952 1457 c-29 -29 -52 -57 -52 -63 0 -6 14 -23 31 -40 l31 -29 59 64 60 64 -28 29 c-15 15 -32 28 -38 28 -6 0 -34 -24 -63 -53z"/> <path d="M767 1272 l-57 -58 35 -34 35 -34 60 59 60 59 -32 33 c-18 18 -35 33 -38 33 -3 0 -31 -26 -63 -58z"/> <path d="M592 1087 l-62 -63 33 -32 33 -32 62 63 62 63 -33 32 -33 32 -62 -63z"/> </g> </svg> 
     </a>
-    market.clearing <br> <small><i>economic research and opinion.</i></small>
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    About
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cvs/cv_fhb/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CV
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="research/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Research
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Blog
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Short Courses & Resources
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Short Courses & Resources
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Solving Economic Models
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            Solving Economic Models
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sem/1-numpy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1 Numpy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sem/2-numba/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2 Numba
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sem/3-application_stoch_proc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3 Application: Stochastic Processes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sem/4-optimization/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4 Optimization
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sem/5-endogenous_grid_method/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5 Endogenous Grid Method
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-  <h1>About</h1>
-
-<p>My name is Frederik, founder of <strong><em>ex.ante</em></strong>, and a PhD student in Economics at the University of Zürich, currently visiting LSE. I brought <strong><em>ex.ante</em></strong> to life because I want to document my research, teaching and opinion on all things economics.</p>
-<p>Through <strong><em>ex.ante</em></strong>, I hope to disseminate my research, share teaching materials on recent methodological advances, and engage in meaningful economic commentary.</p>
-<p>My focus is on macroeconomics. I am specialized in macroeconomic theory and in computational methods in macroeconomics. My doctoral advisors are Florian Scheuer and Felix Kübler. I care about firm dynamics in macroeconomic models; an upcoming theoretical paper of mine with Igli Bajo and Alessandro Ferrari discusses how the productivity distribution of firms in an economy interacts with cleansing effects of recessions. Currently, I am working to apply <em>sequence-space jacobian</em> (Auclert, Rognlie &amp; Straub) solution methods in heterogeneous firm models, to learn more about how policy interacts with firms along a transitional path. </p>
-<p><strong>WEBSITE TO DO</strong></p>
-<ul>
-<li>Add GH repository</li>
-<li>Change color of links</li>
-<li>Add a picture</li>
-<li>Add an intro page to <em>solving economic models</em></li>
-<li>Add place holder page to blog </li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="assets/javascripts/bundle.471ce7a9.min.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-  </body>
+    -->
+</body>
 </html>
