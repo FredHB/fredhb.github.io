@@ -76,7 +76,7 @@ hide:
         Igli Bajo, Frederik H. Bennhoff
 
         ???+ Summary 
-          <div> We shed light on the interactions of heterogeneous firms, heterogeneous households and different monetary policy regimes in the presence of various shocks. This project aims to design and calibrate a tractable heterogeneous firm model building on Bajo, Bennhoff & Ferrari (2024), and quantitatively characterize its dynamics. To solve our model efficiently, we introduce firm heterogeneity into a recent computational framework (i.e., the Sequence-Space Jacobian).  </div>
+            <div> We shed light on the interactions of heterogeneous firms, heterogeneous households and different monetary policy regimes in the presence of various shocks. This project aims to design and calibrate a tractable heterogeneous firm model building on Bajo, Bennhoff & Ferrari (2024), and quantitatively characterize its dynamics. To solve our model efficiently, we introduce firm heterogeneity into a recent computational framework (i.e., the Sequence-Space Jacobian).  </div>
 
 === "CV"
     <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
