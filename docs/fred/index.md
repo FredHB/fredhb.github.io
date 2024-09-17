@@ -192,7 +192,7 @@ hide:
     *University of Zürich, Fall 2023 & Fall 2024*  
 
     - Role: Instructor
-    - I have taught Python and R to PhD students. Since 2024, I have included a module *Solving Economic Models*, which you can access in the [resources](../sem/1-numpy) section of **market.clearing** 
+    - I have taught Python and R to PhD students. Since 2024, I have included a module *Solving Economic Models*, which you can access in the [resources](../sem/index.md) section of **market.clearing** 
 
     <br>
     **Advanced Statistics for MSc. Students**  
