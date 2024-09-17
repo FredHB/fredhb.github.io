@@ -63,7 +63,7 @@ hide:
         *Draft in preparation.*
 
         ???+ Summary
-            <div> Recessions are periods in which the least productive firms in the economy exit, and as the economy recovers, they are replaced by new and more productive entrants. These *cleansing effects* imply that business cycles generate improvements in the average firm productivity. We argue that this is not sufficient to induce long-run gains in GDP and welfare. We show that these are driven by the intensity of *love-for-variety* in households' preferences. If the household has CES preferences, recessions do not bring about any improvement in GDP and welfare. If the economy features more *love-for-variety* than CES, the social planner finds it optimal to subsidize economic activity in recessions to avoid firm exit. </div>
+            <div> Recessions are periods in which the least productive firms in the economy exit, and as the economy recovers, they are replaced by new and more productive entrants. These *cleansing effects* imply that business cycles generate improvements in the average firm productivity. We argue that this is not sufficient to induce long-run gains in GDP and welfare. We show that these are driven by the intensity of *love-for-variety* in aggregate production. If the household has CES preferences, recessions do not bring about any improvement in GDP and welfare. If the economy features more *love-for-variety* than CES, the social planner finds it optimal to subsidize economic activity in recessions to avoid firm exit. </div>
 
 
     2.  **Capital Gains Taxation in Life and Death** <br>
@@ -71,6 +71,12 @@ hide:
 
         ???+ Summary
             <div> End-of-life provisions determine the tax base of capital gains, when assets are bequeathed. Up until today, there existed no quantitative model to simulate the effects of changing end-of-life provisions, which jointly takes into account the reactions of households at two margins: (1) composition of the asset portfolio and (2) total size of the bequeathed estate. We build a novel, unifying framework in which one can simulate the consequences of different end-of-life provisions, bequest taxes and other income taxes simultaneously, thereby surpassing the current state-of-the-art at several margins. We do so by recasting the definition of asset portfolios, which makes the household problem theoretically and quantitatively tractable. </div>
+
+    3.  **Cleansing Dynamics in Economies with Heterogeneity** <br>
+        Igli Bajo, Frederik H. Bennhoff
+
+        ???+ Summary 
+          <div> We shed light on the interactions of heterogeneous firms, heterogeneous households and different monetary policy regimes in the presence of various shocks. This project aims to design and calibrate a tractable heterogeneous firm model building on Bajo, Bennhoff & Ferrari (2024), and quantitatively characterize its dynamics. To solve our model efficiently, we introduce firm heterogeneity into a recent computational framework (i.e., the Sequence-Space Jacobian).  </div>
 
 === "CV"
     <span class="back-button">[:fontawesome-solid-house:](../about/index.md)</span>
