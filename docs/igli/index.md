@@ -25,8 +25,8 @@ hide:
           </p>
         </div>
         <div class="about-info">
-          <p>I’m a PhD candidate in Financial Economics at the University of Zurich and the Swiss Finance Institute. I hold a MSc in Economics from the Barcelona School of Economics. <br> <br>
-          My research interests are macroeconomics, firm dynamics, and corporate finance. In my research, I study how information, financing, and household heterogeneity matter for firm dynamics, and how firm dynamics, in turn, impact long-run output and welfare.</p>
+          <p>I’m a PhD candidate in Finance at the University of Zurich and the Swiss Finance Institute. I hold a MSc in Economics from the Barcelona School of Economics. <br> <br>
+          My research interests are macroeconomics, firm dynamics, and corporate finance. In my research, I study how information, financing, and household heterogeneity matter for firm dynamics, and how firm dynamics, in turn, impact short-run and long-run output and welfare.</p>
         </div>
       </div>
     </section>
@@ -59,8 +59,9 @@ hide:
         </div>
         <div class="work-info">
           <ul>
-            <li><i class="fas fa-file-alt"></i>"Why local stock markets matter", with Charles Parry.</li>
-            <li><i class="fas fa-file-alt"></i>"Information disclosure and firm entry and exit", with Fulvia Oldrini.</li>
+            <li><i class="fas fa-file-alt"></i>"Local stock markets, entrepreneurship, and innovation", with Charles Parry.</li>
+            <li><i class="fas fa-file-alt"></i>"Cleansing Dynamics in Economies with Heterogeneity", with Frederik Bennhoff.</li>
+            <li><i class="fas fa-file-alt"></i>"Information disclosure and firm entry", with Fulvia Oldrini.</li>
             <li><i class="fas fa-file-alt"></i>"Wealth inequality, concentration, and markups", with Jason Blunier.</li>
           </ul>
         </div>
@@ -75,18 +76,6 @@ hide:
           <h3>Teaching</h3>
         </div>
         <div>
-          <div class="teaching-sub-grid">
-              <div class="teaching-info">
-                <ul class="li-head-list">
-                  <li id="li-head"><strong>Instructor</strong></li>
-                </ul>
-              </div>
-              <div class="teaching-info">
-                <ul>
-                  <li>Python Programming, Powercoders Coding Academy, 2021-2022</li>
-                </ul>
-              </div>
-            </div>
             <div class="teaching-sub-grid">
                 <div class="teaching-info">
                   <ul class="li-head-list">
@@ -96,11 +85,24 @@ hide:
                 <div class="teaching-info">
                   <ul>
                     <li>Macroeconomics for Research Students Part I (PhD), University of Zurich, Graduate, Fall 2024</li>
+                    <li>Economic Foundations for Finance, University of Zurich, Graduate, Fall 2024</li>
                     <li>Real Analysis I, University of Zurich, Graduate, Fall 2023 and 2024</li>
                     <li>Theses Supervision, University of Zurich, Graduate and Undergraduate, 2023-present</li>
                   </ul>
                 </div>
-              </div>
+            </div>
+            <div class="teaching-sub-grid">
+                <div class="teaching-info">
+                  <ul class="li-head-list">
+                    <li id="li-head"><strong>Instructor</strong></li>
+                  </ul>
+                </div>
+                <div class="teaching-info">
+                  <ul>
+                    <li>Python Programming, Powercoders Coding Academy, 2021-2022</li>
+                  </ul>
+                </div>
+            </div>
         </div>
       </div>
     </section>

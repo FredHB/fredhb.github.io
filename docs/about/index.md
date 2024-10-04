@@ -35,7 +35,7 @@ We are two economists and PhD candidates at the University of Zürich. Through <
         <div class="review-text-part">
             <div class="menu-title">Igli Bajo</div>
                 <p>
-                My name is Igli. I am a PhD candidate in Financial Economics at the University of Zürich and the Swiss Finance Institute.
+                My name is Igli. I am a PhD candidate in Finance at the University of Zürich and the Swiss Finance Institute.
                 </p>
                 <a href="../igli/" class="read-more">read more</a>
         </div>
