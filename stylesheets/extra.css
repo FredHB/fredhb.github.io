@@ -3,8 +3,8 @@
 /* Set global text color */
 .md-main {
     color: #000000; /* Change this to your desired text color */
-    font-weight: normal;  /* Adjust the font weight as needed */
-    font-family: "Futura", "Overpass"; 
+    font-weight: lighter;  /* Lighter base font weight */
+    font-family: "Gill Sans", "Futura", "Overpass"; 
     text-align: justify;
 }
 
@@ -230,6 +230,11 @@ details[open] summary {
     color: black;
 } 
 
+/* Lighter weight for body text inside markdown content */
+.md-typeset {
+    font-weight: 300;
+}
+
 
 /* Actual css for my webpage */
 
@@ -252,7 +257,7 @@ details[open] summary {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 0.7fr 2fr;
+    grid-template-columns: 1fr 2fr;
     gap: 20px;
     align-items: top;
 }
@@ -472,4 +477,10 @@ details[open] summary {
 
 .work-info details p, .research-info details p {
     font-size: 0.75rem;
+}
+
+/* Make main page content single-spaced */
+.md-typeset, .md-typeset p, .md-typeset li {
+    line-height: 1.35; /* single spacing */
+    font-size: 11pt; 
 }
