@@ -9,7 +9,8 @@
 }
 
 .md-header__topic .md-ellipsis {
-    font-family: "Futura", "Overpass"; 
+    /* Use Gill Sans for header topics when available */
+    font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
     font-weight: bold;
 }
 
@@ -30,7 +31,8 @@
     font-size: 1.2rem;  /* Adjust the font size as needed */
     line-height: 1.5rem;  /* Adjust the line height as needed */
     color: #000000;
-    font-family: "Arial Black"; 
+    /* Use Gill Sans for header title (falls back to other fonts) */
+    font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
     font-weight: normal;  /* Adjust the title font weight as needed */
 }
 
@@ -226,9 +228,11 @@ details[open] summary {
 
 /* Set global text color */
 
-.md-typeset h2, .md-typeset h1, .md-typeset h3 {
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
     color: black;
-} 
+    /* Use Gill Sans for Markdown headings when available, fall back to Overpass (already imported) */
+    font-family: "Gill Sans", "Overpass", sans-serif;
+}
 
 /* Lighter weight for body text inside markdown content */
 .md-typeset {
@@ -483,4 +487,9 @@ details[open] summary {
 .md-typeset, .md-typeset p, .md-typeset li {
     line-height: 1.35; /* single spacing */
     font-size: 11pt; 
+}
+
+/* Prevent layout shift when switching pages by always reserving vertical scrollbar space */
+html {
+    overflow-y: scroll;
 }
