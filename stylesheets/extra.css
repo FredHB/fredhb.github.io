@@ -9,31 +9,35 @@
 }
 
 .md-header__topic .md-ellipsis {
-    /* Use Gill Sans for header topics when available */
     font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
     font-weight: bold;
+    color: #ffffff;
 }
 
 
 /* Exempt the navigation menu from text justified */
 .md-nav {
-    text-align: left; /* Override text alignment for navigation menu */
+    text-align: left;
+}
+
+.md-nav__link {
+    font-size: 0.85rem;
 }
 
 /* HEADER CONFIGURATION */
 .md-header {
-    box-shadow: none; /* Remove the shadow */
-    border-bottom: 4px solid #000000; /* Add a simple bottom border line */
+    box-shadow: none;
+    border-bottom: 4px solid #000000;
     padding: 12px;
+    background-color: rgb(140, 30, 30);
 }
 
 .md-header__title {
-    font-size: 1.2rem;  /* Adjust the font size as needed */
-    line-height: 1.5rem;  /* Adjust the line height as needed */
-    color: #000000;
-    /* Use Gill Sans for header title (falls back to other fonts) */
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #ffffff;
     font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
-    font-weight: normal;  /* Adjust the title font weight as needed */
+    font-weight: normal;
 }
 
 .md-header__title--active .md-header__topic+.md-header__topic {
@@ -53,9 +57,9 @@
 }
 
 .md-header__button.md-icon svg {
-    height: 35px;  /* Adjust the height as needed */
-    width: 35px;   /* Maintain aspect ratio */
-    color: #000000;
+    height: 35px;
+    width: 35px;
+    color: #ffffff;
 }
 
 
@@ -67,9 +71,9 @@
 
 :root {
     --md-primary-fg-color:        #ffffff; /*shows in header*/
-    --md-primary-fg-color--light: #dbd8d8;
-    --md-primary-fg-color--dark:  #62725f;
-    --md-accent-fg-color: rgb(168, 39, 39); /* Change this to your desired accent color */
+    --md-primary-fg-color--light: #f5e8e8;
+    --md-primary-fg-color--dark:  rgb(140, 30, 30);
+    --md-accent-fg-color: rgb(140, 30, 30); /* Change this to your desired accent color */
 
   }
 
@@ -185,7 +189,7 @@ details[open] summary {
     color: #000000;
 }
 .md-nav__link:hover .md-ellipsis {
-    color: rgb(168, 39, 39);
+    color: rgb(140, 30, 30);
     transition: 125ms;
 }
 .md-nav__link--active .md-ellipsis {
@@ -196,7 +200,7 @@ details[open] summary {
 /* INLINE LINKS */
 .md-typeset a, .md-typeset a:hover, a:before {
     transition: color 125ms;
-    color: rgb(168, 39, 39); /* Change this to your desired link color */
+    color: rgb(140, 30, 30); /* Change this to your desired link color */
     text-decoration: underline;
     }
 
@@ -234,9 +238,9 @@ details[open] summary {
     font-family: "Gill Sans", "Overpass", sans-serif;
 }
 
-/* Lighter weight for body text inside markdown content */
+/* Body text weight for markdown content */
 .md-typeset {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 
@@ -394,6 +398,28 @@ details[open] summary {
     text-decoration: none !important; /* Remove underline on hover */
   }
 
+/* Paper download / slides pill buttons */
+.paper-link {
+    display: inline-block;
+    background-color: rgb(140, 30, 30);
+    color: white !important;
+    padding: 0.18rem 0.6rem;
+    border-radius: 4px;
+    margin: 0 0.2rem 0.2rem 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    vertical-align: middle;
+}
+.paper-link:hover {
+    background-color: rgb(90, 15, 15) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
 
 @media (max-width: 990px) {
 
@@ -483,10 +509,90 @@ details[open] summary {
     font-size: 0.75rem;
 }
 
-/* Make main page content single-spaced */
+/* Conference / seminar small text */
+.md-typeset small {
+    font-size: 0.82rem;
+    line-height: 1.25;
+    display: inline-block;
+}
+
+/* Main content typography */
 .md-typeset, .md-typeset p, .md-typeset li {
-    line-height: 1.35; /* single spacing */
-    font-size: 11pt; 
+    line-height: 1.5;
+    font-size: 12.5pt;
+}
+
+/* CV LAYOUT */
+.cv-entry {
+    margin-bottom: 1.1rem;
+}
+.cv-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+.cv-institution {
+    font-weight: bold;
+}
+.cv-dates {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #444;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.cv-role {
+    padding-left: 1.2rem;
+    font-style: italic;
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+}
+.cv-details {
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
+    line-height: 1.45;
+    color: #222;
+}
+
+/* Tighter spacing for research / content list items */
+.md-typeset ul > li {
+    margin-top: 0.55em;
+    margin-bottom: 0.1em;
+}
+
+.md-typeset ul > li > p {
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
+}
+
+/* Research / content section subheadings (macroeconomics, public finance, etc.) */
+.md-typeset h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000 !important;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 0.2em;
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+/* Protect home page h3s (name, work/research/teaching labels) from the above */
+.about-img h3,
+.work-title h3,
+.research-title h3,
+.teaching-title h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 12px;
+    margin-bottom: 5px;
 }
 
 /* Prevent layout shift when switching pages by always reserving vertical scrollbar space */
@@ -500,15 +606,15 @@ html {
 }
 .md-typeset .admonition.pied-piper,
 .md-typeset details.pied-piper {
-  border-color: #009688;
+  border-color: rgb(140, 30, 30);
 }
 .md-typeset .pied-piper > .admonition-title,
 .md-typeset .pied-piper > summary {
-  background-color: rgba(43, 155, 70, 0.1);
+  background-color: rgba(140, 30, 30, 0.08);
 }
 .md-typeset .pied-piper > .admonition-title::before,
 .md-typeset .pied-piper > summary::before {
-  background-color: #009688;
+  background-color: rgb(140, 30, 30);
   /* -webkit-mask-image: var(--md-admonition-icon--pied-piper);
           mask-image: var(--md-admonition-icon--pied-piper); */
 }
