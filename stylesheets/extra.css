@@ -522,6 +522,64 @@ details[open] summary {
     font-size: 12.5pt;
 }
 
+/* ABSTRACT MODAL */
+.abstract-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.abstract-modal-overlay.open {
+    display: flex;
+}
+.abstract-modal-box {
+    background: #fff;
+    max-width: 680px;
+    width: 90%;
+    max-height: 78vh;
+    overflow-y: auto;
+    border-radius: 6px;
+    border-top: 4px solid rgb(140, 30, 30);
+    padding: 1.8rem 2rem 1.6rem;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.abstract-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.abstract-modal-header span {
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(140, 30, 30);
+}
+.abstract-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+    line-height: 1;
+    padding: 0;
+}
+.abstract-modal-close:hover {
+    color: rgb(140, 30, 30);
+}
+.abstract-modal-content {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #111;
+}
+
 /* CONFERENCE LIST */
 .conf-list ul {
     margin-top: 0.2rem;
