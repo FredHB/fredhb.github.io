@@ -522,6 +522,25 @@ details[open] summary {
     font-size: 12.5pt;
 }
 
+/* CONFERENCE LIST */
+.conf-list ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+}
+.conf-list ul li {
+    margin-bottom: 0.15rem;
+}
+.conf-year {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(140, 30, 30);
+    margin-bottom: 0.1rem !important;
+    margin-top: 0.8rem !important;
+}
+
 /* CV LAYOUT */
 .cv-entry {
     margin-bottom: 1.1rem;
