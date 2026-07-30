@@ -2,7 +2,7 @@
 
 /* Set global text color */
 .md-main {
-    color: #000000; /* Change this to your desired text color */
+    color: var(--site-ink);
     font-weight: lighter;  /* Lighter base font weight */
     font-family: "Gill Sans", "Futura", "Overpass"; 
     text-align: justify;
@@ -27,7 +27,7 @@
 /* HEADER CONFIGURATION */
 .md-header {
     box-shadow: none;
-    border-bottom: 4px solid #000000;
+    border-bottom: 4px solid var(--site-ink);
     padding: 12px;
     background-color: rgb(140, 30, 30);
 }
@@ -70,6 +70,9 @@
 }
 
 :root {
+    --site-ink: #303030;
+    --md-default-fg-color: var(--site-ink);
+    --md-typeset-color: var(--site-ink);
     --md-primary-fg-color:        #ffffff; /*shows in header*/
     --md-primary-fg-color--light: #f5e8e8;
     --md-primary-fg-color--dark:  rgb(140, 30, 30);
@@ -109,11 +112,15 @@ details summary {
     cursor: pointer;
 }
 details[open] summary {
-    color: #000000;
+    color: var(--site-ink);
 }
 
 
 /* ABOUT */
+
+#homepage-title {
+    display: none;
+}
 
 .all-about {
     width: 70%;
@@ -130,7 +137,7 @@ details[open] summary {
 .img-wrapper img {
     cursor: pointer;
     transition: .3s ease-in-out;
-    border: 5px solid black;
+    border: 5px solid var(--site-ink);
 }
 
 .img-wrapper:hover img {
@@ -186,14 +193,14 @@ details[open] summary {
 
 /* NAVIGATION MENU LINKS */
 .md-ellipsis {
-    color: #000000;
+    color: var(--site-ink);
 }
 .md-nav__link:hover .md-ellipsis {
     color: rgb(140, 30, 30);
     transition: 125ms;
 }
 .md-nav__link--active .md-ellipsis {
-    color: #000000; /* Highlight color for active link */
+    color: var(--site-ink); /* Highlight color for active link */
     font-weight: bold;
 }
 
@@ -233,7 +240,7 @@ details[open] summary {
 /* Set global text color */
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-    color: black;
+    color: var(--site-ink);
     /* Use Gill Sans for Markdown headings when available, fall back to Overpass (already imported) */
     font-family: "Gill Sans", "Overpass", sans-serif;
 }
@@ -401,16 +408,17 @@ details[open] summary {
 /* Paper download / slides pill buttons */
 .paper-link {
     display: inline-block;
-    background-color: rgb(140, 30, 30);
-    color: white !important;
+    background-color: #fff;
+    border: 1px solid var(--site-ink);
+    color: var(--site-ink) !important;
     padding: 0.18rem 0.6rem;
     border-radius: 4px;
     margin: 0 0.2rem 0.2rem 0;
     font-size: 0.65rem;
     font-weight: 600;
     font-family: "Gill Sans", "Overpass", sans-serif;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    letter-spacing: normal;
+    text-transform: none;
     text-decoration: none !important;
     vertical-align: middle;
 }
@@ -644,14 +652,74 @@ details[open] summary {
     margin-bottom: 0.15em;
 }
 
+/* Research paper list */
+.md-typeset .papers-list {
+    margin: 1.4rem 0 0;
+    padding-left: 2.4rem;
+}
+.md-typeset .papers-list > .paper-entry {
+    padding-left: 0.45rem;
+    margin: 0 0 1.7rem;
+}
+.md-typeset .papers-list > .paper-entry::marker {
+    color: rgb(140, 30, 30);
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.paper-heading {
+    align-items: center;
+    column-gap: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.12rem;
+    row-gap: 0.28rem;
+}
+.paper-heading > strong {
+    font-size: 1em;
+    line-height: 1.3;
+}
+.paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin: 0;
+}
+.paper-tags span {
+    background-color: #fff;
+    border: 1px solid var(--site-ink);
+    border-radius: 4px;
+    color: var(--site-ink);
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1;
+    padding: 0.2rem 0.38rem;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+@media (max-width: 790px) {
+    .md-typeset .papers-list {
+        padding-left: 1.85rem;
+    }
+    .md-typeset .papers-list > .paper-entry {
+        padding-left: 0.25rem;
+    }
+    .paper-heading {
+        align-items: flex-start;
+    }
+}
+
 /* Research / content section subheadings (macroeconomics, public finance, etc.) */
 .md-typeset h3 {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #000 !important;
-    border-bottom: 1.5px solid #000;
+    color: var(--site-ink) !important;
+    border-bottom: 1.5px solid var(--site-ink);
     padding-bottom: 0.2em;
     margin-top: 1.6em;
     margin-bottom: 0.5em;
