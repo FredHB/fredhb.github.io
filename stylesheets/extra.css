@@ -4,7 +4,7 @@
 .md-main {
     color: var(--site-ink);
     font-weight: lighter;  /* Lighter base font weight */
-    font-family: "Gill Sans", "Futura", "Overpass"; 
+    font-family: "Gill Sans", "Futura", "Overpass";
     text-align: justify;
 }
 
