@@ -5,3 +5,9 @@ site/
 *.jpg
 *.png
 *.pdf
+
+# Publish the academic CV.
+!docs/cv/Frederik_Bennhoff_CV.pdf
+
+# Publish research papers from the website repository.
+!docs/research/papers/*.pdf

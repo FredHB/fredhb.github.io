@@ -2,8 +2,8 @@ site_name: 'Frederik H Bennhoff <br><small><i>[public] finance | macroeconomics<
 
 nav:
   - about me: index.md
-  - cv: cv/cv.md
   - research: research/research.md
+  - cv: cv/cv.md
   - teaching & short courses: 
     - ./courses/index.md
     - solving economic models: 
@@ -30,8 +30,8 @@ theme:
   # logo:
   #   icon: "home"
   palette:
-   primary: "teal"
-   accent: "teal"
+   primary: "white"
+   accent: "red"
   font:
     text: "IBM Plex Serif"
     code: "IBM Plex Mono"
@@ -94,3 +94,4 @@ extra_css:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
+  - assets/javascripts/hide-footer.js

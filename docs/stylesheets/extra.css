@@ -2,36 +2,42 @@
 
 /* Set global text color */
 .md-main {
-    color: #000000; /* Change this to your desired text color */
-    font-weight: normal;  /* Adjust the font weight as needed */
-    font-family: "Futura", "Overpass"; 
+    color: var(--site-ink);
+    font-weight: lighter;  /* Lighter base font weight */
+    font-family: "Gill Sans", "Futura", "Overpass";
     text-align: justify;
 }
 
 .md-header__topic .md-ellipsis {
-    font-family: "Futura", "Overpass"; 
+    font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
     font-weight: bold;
+    color: #ffffff;
 }
 
 
 /* Exempt the navigation menu from text justified */
 .md-nav {
-    text-align: left; /* Override text alignment for navigation menu */
+    text-align: left;
+}
+
+.md-nav__link {
+    font-size: 0.85rem;
 }
 
 /* HEADER CONFIGURATION */
 .md-header {
-    box-shadow: none; /* Remove the shadow */
-    border-bottom: 4px solid #000000; /* Add a simple bottom border line */
+    box-shadow: none;
+    border-bottom: 4px solid var(--site-ink);
     padding: 12px;
+    background-color: rgb(140, 30, 30);
 }
 
 .md-header__title {
-    font-size: 1.2rem;  /* Adjust the font size as needed */
-    line-height: 1.5rem;  /* Adjust the line height as needed */
-    color: #000000;
-    font-family: "Arial Black"; 
-    font-weight: normal;  /* Adjust the title font weight as needed */
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #ffffff;
+    font-family: "Gill Sans", "Futura", "Overpass", sans-serif;
+    font-weight: normal;
 }
 
 .md-header__title--active .md-header__topic+.md-header__topic {
@@ -51,9 +57,9 @@
 }
 
 .md-header__button.md-icon svg {
-    height: 35px;  /* Adjust the height as needed */
-    width: 35px;   /* Maintain aspect ratio */
-    color: #000000;
+    height: 35px;
+    width: 35px;
+    color: #ffffff;
 }
 
 
@@ -64,10 +70,13 @@
 }
 
 :root {
+    --site-ink: #303030;
+    --md-default-fg-color: var(--site-ink);
+    --md-typeset-color: var(--site-ink);
     --md-primary-fg-color:        #ffffff; /*shows in header*/
-    --md-primary-fg-color--light: #dbd8d8;
-    --md-primary-fg-color--dark:  #62725f;
-    --md-accent-fg-color: rgb(168, 39, 39); /* Change this to your desired accent color */
+    --md-primary-fg-color--light: #f5e8e8;
+    --md-primary-fg-color--dark:  rgb(140, 30, 30);
+    --md-accent-fg-color: rgb(140, 30, 30); /* Change this to your desired accent color */
 
   }
 
@@ -103,11 +112,15 @@ details summary {
     cursor: pointer;
 }
 details[open] summary {
-    color: #000000;
+    color: var(--site-ink);
 }
 
 
 /* ABOUT */
+
+#homepage-title {
+    display: none;
+}
 
 .all-about {
     width: 70%;
@@ -124,7 +137,7 @@ details[open] summary {
 .img-wrapper img {
     cursor: pointer;
     transition: .3s ease-in-out;
-    border: 5px solid black;
+    border: 5px solid var(--site-ink);
 }
 
 .img-wrapper:hover img {
@@ -180,21 +193,21 @@ details[open] summary {
 
 /* NAVIGATION MENU LINKS */
 .md-ellipsis {
-    color: #000000;
+    color: var(--site-ink);
 }
 .md-nav__link:hover .md-ellipsis {
-    color: rgb(168, 39, 39);
+    color: rgb(140, 30, 30);
     transition: 125ms;
 }
 .md-nav__link--active .md-ellipsis {
-    color: #000000; /* Highlight color for active link */
+    color: var(--site-ink); /* Highlight color for active link */
     font-weight: bold;
 }
 
 /* INLINE LINKS */
 .md-typeset a, .md-typeset a:hover, a:before {
     transition: color 125ms;
-    color: rgb(168, 39, 39); /* Change this to your desired link color */
+    color: rgb(140, 30, 30); /* Change this to your desired link color */
     text-decoration: underline;
     }
 
@@ -226,9 +239,16 @@ details[open] summary {
 
 /* Set global text color */
 
-.md-typeset h2, .md-typeset h1, .md-typeset h3 {
-    color: black;
-} 
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    color: var(--site-ink);
+    /* Use Gill Sans for Markdown headings when available, fall back to Overpass (already imported) */
+    font-family: "Gill Sans", "Overpass", sans-serif;
+}
+
+/* Body text weight for markdown content */
+.md-typeset {
+    font-weight: 400;
+}
 
 
 /* Actual css for my webpage */
@@ -252,7 +272,7 @@ details[open] summary {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 0.7fr 2fr;
+    grid-template-columns: 1fr 2fr;
     gap: 20px;
     align-items: top;
 }
@@ -385,6 +405,29 @@ details[open] summary {
     text-decoration: none !important; /* Remove underline on hover */
   }
 
+/* Paper download / slides pill buttons */
+.paper-link {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid var(--site-ink);
+    color: var(--site-ink) !important;
+    padding: 0.18rem 0.6rem;
+    border-radius: 4px;
+    margin: 0 0.2rem 0.2rem 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    letter-spacing: normal;
+    text-transform: none;
+    text-decoration: none !important;
+    vertical-align: middle;
+}
+.paper-link:hover {
+    background-color: rgb(90, 15, 15) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
 
 @media (max-width: 990px) {
 
@@ -472,4 +515,251 @@ details[open] summary {
 
 .work-info details p, .research-info details p {
     font-size: 0.75rem;
+}
+
+/* Conference / seminar small text */
+.md-typeset small {
+    font-size: 0.82rem;
+    line-height: 1.25;
+    display: inline-block;
+}
+
+/* Main content typography */
+.md-typeset, .md-typeset p, .md-typeset li {
+    line-height: 1.5;
+    font-size: 12.5pt;
+}
+
+/* ABSTRACT MODAL */
+.abstract-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.abstract-modal-overlay.open {
+    display: flex;
+}
+.abstract-modal-box {
+    background: #fff;
+    max-width: 680px;
+    width: 90%;
+    max-height: 78vh;
+    overflow-y: auto;
+    border-radius: 6px;
+    border-top: 4px solid rgb(140, 30, 30);
+    padding: 1.8rem 2rem 1.6rem;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.abstract-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.abstract-modal-header span {
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(140, 30, 30);
+}
+.abstract-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+    line-height: 1;
+    padding: 0;
+}
+.abstract-modal-close:hover {
+    color: rgb(140, 30, 30);
+}
+.abstract-modal-content {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #111;
+}
+
+/* CONFERENCE LIST */
+.conf-list ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+}
+.conf-list ul li {
+    margin-bottom: 0.15rem;
+}
+.conf-year {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(140, 30, 30);
+    margin-bottom: 0.1rem !important;
+    margin-top: 0.8rem !important;
+}
+
+/* CV LAYOUT */
+.cv-entry {
+    margin-bottom: 1.1rem;
+}
+.cv-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+.cv-institution {
+    font-weight: bold;
+}
+.cv-dates {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #444;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.cv-role {
+    padding-left: 1.2rem;
+    font-style: italic;
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+}
+.cv-details {
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
+    line-height: 1.45;
+    color: #222;
+}
+
+/* Tighter spacing for research / content list items */
+.md-typeset ul > li {
+    margin-top: 0.55em;
+    margin-bottom: 0.1em;
+}
+
+.md-typeset ul > li > p {
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
+}
+
+/* Research paper list */
+.md-typeset .papers-list {
+    margin: 1.4rem 0 0;
+    padding-left: 2.4rem;
+}
+.md-typeset .papers-list > .paper-entry {
+    padding-left: 0.45rem;
+    margin: 0 0 1.7rem;
+}
+.md-typeset .papers-list > .paper-entry::marker {
+    color: rgb(140, 30, 30);
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.paper-heading {
+    align-items: center;
+    column-gap: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.12rem;
+    row-gap: 0.28rem;
+}
+.paper-heading > strong {
+    font-size: 1em;
+    line-height: 1.3;
+}
+.paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin: 0;
+}
+.paper-tags span {
+    background-color: #fff;
+    border: 1px solid var(--site-ink);
+    border-radius: 4px;
+    color: var(--site-ink);
+    font-family: "Gill Sans", "Overpass", sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1;
+    padding: 0.2rem 0.38rem;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+@media (max-width: 790px) {
+    .md-typeset .papers-list {
+        padding-left: 1.85rem;
+    }
+    .md-typeset .papers-list > .paper-entry {
+        padding-left: 0.25rem;
+    }
+    .paper-heading {
+        align-items: flex-start;
+    }
+}
+
+/* Research / content section subheadings (macroeconomics, public finance, etc.) */
+.md-typeset h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--site-ink) !important;
+    border-bottom: 1.5px solid var(--site-ink);
+    padding-bottom: 0.2em;
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+/* Protect home page h3s (name, work/research/teaching labels) from the above */
+.about-img h3,
+.work-title h3,
+.research-title h3,
+.teaching-title h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+/* Prevent layout shift when switching pages by always reserving vertical scrollbar space */
+html {
+    overflow-y: scroll;
+}
+
+
+:root {
+  --md-admonition-icon--pied-piper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z"/></svg>')
+}
+.md-typeset .admonition.pied-piper,
+.md-typeset details.pied-piper {
+  border-color: rgb(140, 30, 30);
+}
+.md-typeset .pied-piper > .admonition-title,
+.md-typeset .pied-piper > summary {
+  background-color: rgba(140, 30, 30, 0.08);
+}
+.md-typeset .pied-piper > .admonition-title::before,
+.md-typeset .pied-piper > summary::before {
+  background-color: rgb(140, 30, 30);
+  /* -webkit-mask-image: var(--md-admonition-icon--pied-piper);
+          mask-image: var(--md-admonition-icon--pied-piper); */
 }
